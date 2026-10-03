@@ -15,8 +15,8 @@
   <meta name="apple-mobile-web-app-title" content="Ponte Dattaro">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <!-- The first frame of the flight (17.5 km) before anything else: it is the page's first image. -->
-  <link rel="preload" as="image" href="./assets/film/poster-mobile.webp?v=v10b" media="(max-width:759.98px)" fetchpriority="high">
-  <link rel="preload" as="image" href="./assets/film/poster.webp?v=v10b" media="(min-width:760px)" fetchpriority="high">
+  <link rel="preload" as="image" href="./assets/film/poster-mobile.webp?v=v10c" media="(max-width:759.98px), (max-aspect-ratio:9/10)" fetchpriority="high">
+  <link rel="preload" as="image" href="./assets/film/poster.webp?v=v10c" media="(min-width:760px) and (min-aspect-ratio:9/10)" fetchpriority="high">
   <script>
     // Decide before first paint whether the live 3D journey can run, so the
     // page never shifts from the static layout to the pinned one. A cheap
@@ -38,7 +38,7 @@
   <noscript><style>
     @media(max-width:900px){.cin-header{position:relative!important;grid-template-columns:1fr!important}.cin-header nav{display:flex!important;position:static!important;grid-column:1/-1;flex-wrap:wrap;flex-direction:row!important;gap:8px!important;padding:12px 0 0!important}.header-actions{position:static!important;grid-column:1/-1!important;justify-self:stretch!important;display:flex!important;justify-content:flex-start}.menu-toggle{display:none!important}}
   </style></noscript>
-  <script type="module" crossorigin src="./assets/sito-DpTEDvU1.js"></script>
+  <script type="module" crossorigin src="./assets/sito-XawyvxeW.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/common-BJAAWmJM.js">
   <link rel="stylesheet" crossorigin href="./assets/sito-CFJDAMdj.css">
 </head>
@@ -82,8 +82,15 @@
         <p class="journey-status" data-journey-status role="status"></p>
       </div>
       <div class="journey-stage" data-journey-stage>
-        <picture class="journey-poster" data-journey-poster aria-hidden="true"><source media="(max-width:759.98px)" srcset="./assets/film/poster-mobile.webp?v=v10b"><img src="./assets/film/poster.webp?v=v10b" width="1920" height="1080" alt="" fetchpriority="high" decoding="async"></picture>
-        <div class="journey-canvas" data-journey-canvas aria-hidden="true"></div>
+        <picture class="journey-poster" data-journey-poster aria-hidden="true"><source media="(max-width:759.98px), (max-aspect-ratio:9/10)" srcset="./assets/film/poster-mobile.webp?v=v10c"><img src="./assets/film/poster.webp?v=v10c" width="1920" height="1080" alt="" fetchpriority="high" decoding="async"></picture>
+        <div class="journey-canvas" data-journey-canvas aria-hidden="true"><video class="journey-film" data-film muted autoplay playsinline webkit-playsinline preload="auto" disablepictureinpicture disableremoteplayback aria-hidden="true">
+          <!-- V10: the film starts downloading while the page is parsed. Phones (and tall windows): the vertical cut.
+               HEVC first (half the size at the same quality, hardware decoded on iPhone and Mac), H.264 for the rest. -->
+          <source media="(max-width:759.98px), (max-aspect-ratio:9/10)" src="./assets/film/film-mobile.hevc.mp4?v=v10c" type='video/mp4; codecs="hvc1"'>
+          <source media="(max-width:759.98px), (max-aspect-ratio:9/10)" src="./assets/film/film-mobile.mp4?v=v10c" type="video/mp4">
+          <source src="./assets/film/film.hevc.mp4?v=v10c" type='video/mp4; codecs="hvc1"'>
+          <source src="./assets/film/film.mp4?v=v10c" type="video/mp4">
+        </video></div>
         <div class="journey-ahead" data-journey-ahead aria-hidden="true"><img alt="" width="1600" height="1000" decoding="async"></div>
         <div class="journey-labels" data-journey-labels aria-hidden="true"></div>
         <div class="journey-veil" aria-hidden="true"></div>
@@ -109,7 +116,7 @@
 
       <div class="journey-chapters">
         <article class="journey-step journey-step--intro" id="tappa-mappa" data-step="0">
-          <figure class="journey-still"><img src="./assets/journey/still-mappa.webp?v=v10b" width="1600" height="1000" alt="Ricostruzione 3D di Strada Montanara: la farmacia con l’insegna ERBORISTERIA e la croce verde a LED sul palo." loading="lazy" decoding="async"></figure>
+          <figure class="journey-still"><img src="./assets/journey/still-mappa.webp?v=v10c" width="1600" height="1000" alt="Ricostruzione 3D di Strada Montanara: la farmacia con l’insegna ERBORISTERIA e la croce verde a LED sul palo." loading="lazy" decoding="async"></figure>
           <div class="step-copy">
             <p class="step-kicker">Farmacia Ponte Dattaro · Parma, dal 1966</p>
             <h1 id="hero-title">La tua farmacia.<span>A Parma.</span></h1>
@@ -122,7 +129,7 @@
           </div>
         </article>
         <article class="journey-step" id="tappa-quartiere" data-step="1" hidden>
-          <figure class="journey-still"><img src="./assets/journey/still-quartiere.webp?v=v10b" width="1600" height="1000" alt="Il quartiere Montanara dall’alto, tra i torrenti Parma e Baganza." loading="lazy" decoding="async"></figure>
+          <figure class="journey-still"><img src="./assets/journey/still-quartiere.webp?v=v10c" width="1600" height="1000" alt="Il quartiere Montanara dall’alto, tra i torrenti Parma e Baganza." loading="lazy" decoding="async"></figure>
           <div class="step-copy">
             <p class="step-kicker">Quartiere Montanara</p>
             <h2>Vicini, <span>dal 1966.</span></h2>
@@ -130,7 +137,7 @@
           </div>
         </article>
         <article class="journey-step" id="tappa-strada" data-step="2" hidden>
-          <figure class="journey-still"><img src="./assets/journey/still-strada.webp?v=v10b" width="1600" height="1000" alt="Strada Montanara tra i grandi pini, con la farmacia sul lato nord." loading="lazy" decoding="async"></figure>
+          <figure class="journey-still"><img src="./assets/journey/still-strada.webp?v=v10c" width="1600" height="1000" alt="Strada Montanara tra i grandi pini, con la farmacia sul lato nord." loading="lazy" decoding="async"></figure>
           <div class="step-copy">
             <p class="step-kicker">Strada Montanara, 23/b</p>
             <h2>Strada Montanara,<span>23/b.</span></h2>
@@ -139,7 +146,7 @@
           </div>
         </article>
         <article class="journey-step" id="tappa-facciata" data-step="3">
-          <figure class="journey-still"><img src="./assets/journey/still-facciata.webp?v=v10b" width="1600" height="1000" alt="Ricostruzione 3D: la croce verde a LED sul palo davanti alla farmacia, su Strada Montanara." loading="lazy" decoding="async"></figure>
+          <figure class="journey-still"><img src="./assets/journey/still-facciata.webp?v=v10c" width="1600" height="1000" alt="Ricostruzione 3D: la croce verde a LED sul palo davanti alla farmacia, su Strada Montanara." loading="lazy" decoding="async"></figure>
           <div class="step-copy">
             <p class="step-kicker">Dal 1966</p>
             <h2>Una storia<span>di cura.</span></h2>
@@ -147,7 +154,7 @@
           </div>
         </article>
         <article class="journey-step" id="tappa-ingresso" data-step="4">
-          <figure class="journey-still"><img src="./assets/journey/still-ingresso.webp?v=v10b" width="1600" height="1000" alt="Ricostruzione 3D dell’ingresso vero: le porte scorrevoli sotto la tenda e l’insegna FARMACIA, tra il distributore e i raccoglitori dei farmaci scaduti, si aprono sull’interno." loading="lazy" decoding="async"></figure>
+          <figure class="journey-still"><img src="./assets/journey/still-ingresso.webp?v=v10c" width="1600" height="1000" alt="Ricostruzione 3D dell’ingresso vero: le porte scorrevoli sotto la tenda e l’insegna FARMACIA, tra il distributore e i raccoglitori dei farmaci scaduti, si aprono sull’interno." loading="lazy" decoding="async"></figure>
           <div class="step-copy">
             <p class="step-kicker">Benvenuto</p>
             <h2>Entra. <span>Ti ascoltiamo.</span></h2>
@@ -155,7 +162,7 @@
           </div>
         </article>
         <article class="journey-step journey-step--services" id="tappa-interno" data-step="5">
-          <figure class="journey-still"><img src="./assets/journey/still-interno.webp?v=v10b" width="1600" height="1000" alt="Interno di concept: la croce in vetro smeraldo e gli strumenti per ECG, Holter e dermatoscopia." loading="lazy" decoding="async"></figure>
+          <figure class="journey-still"><img src="./assets/journey/still-interno.webp?v=v10c" width="1600" height="1000" alt="Interno di concept: la croce in vetro smeraldo e gli strumenti per ECG, Holter e dermatoscopia." loading="lazy" decoding="async"></figure>
           <div class="step-copy">
             <p class="step-kicker">Dentro la farmacia</p>
             <h2>I servizi,<span>da vicino.</span></h2>
