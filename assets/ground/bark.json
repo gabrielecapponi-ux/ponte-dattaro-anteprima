@@ -1,0 +1,35 @@
+{
+ "by": "scripts/build-ground-bark.mjs",
+ "pine": {
+  "size": [
+   1,
+   2
+  ],
+  "mean": [
+   129,
+   97,
+   81
+  ]
+ },
+ "celtis": {
+  "size": [
+   0.8,
+   0.8
+  ],
+  "mean": [
+   121,
+   121,
+   114
+  ]
+ },
+ "leaves": {
+  "size": 1024,
+  "tiles": 2,
+  "mean": [
+   124,
+   140,
+   78
+  ],
+  "coverage": 0.117
+ }
+}

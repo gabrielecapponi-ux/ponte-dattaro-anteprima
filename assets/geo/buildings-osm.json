@@ -1,0 +1,94 @@
+{
+  "file": "buildings-osm.bin",
+  "format": "BLDG v1 (src/world/buildings-data.js)",
+  "source": "OSM (parma-model.json) con altezze migliorate",
+  "attribution": "Impronte © OpenStreetMap contributors (ODbL); altezze in parte dal DBTR Unità volumetriche © Regione Emilia-Romagna, CC BY 4.0 e stimate dalle ombre dell'Ortofoto RER 2025-26 RGB © Regione Emilia-Romagna, CC BY 4.0, dati elaborati",
+  "attributions": [
+    "© OpenStreetMap contributors (ODbL)",
+    "Edifici e altezze: DBTR Unità volumetriche © Regione Emilia-Romagna, CC BY 4.0",
+    "Ortofoto RER 2025-26 RGB © Regione Emilia-Romagna, CC BY 4.0, dati elaborati"
+  ],
+  "classes": "classe = fonte dell'altezza: 0 osm-stima, 1 osm-tag, 2 ombra-L2, 3 ombra-L1, 4 dbtr-uvl, 5 manuale",
+  "note": "Ripiego: le geometrie delle Unità volumetriche del DBTR si ottengono solo prenotando un'estrazione sul geoportale regionale (modulo con dati personali); con quel file: node scripts/build-buildings.mjs --uvl <file.geojson>. La farmacia è esclusa (la gestisce pharmacy.js). Copertura: solo l'estensione OSM di parma-model.json (x -1683..2046, z -3321..1270), non tutto L0.",
+  "baseRef": 66.82,
+  "bytes": 395208,
+  "gzip": 215528,
+  "brotli": 174966,
+  "polygons": 10622,
+  "rings": 10622,
+  "points": 66927,
+  "maxQuantErrM": 0,
+  "maxHeightQuantErrM": 0,
+  "bounds": {
+    "x0": -1682.9000250771642,
+    "z0": -3321.400049492717,
+    "x1": 2045.9000304862857,
+    "z1": 1270.1000189259648
+  },
+  "heightSources": {
+    "osm-stima": 9722,
+    "osm-tag": 111,
+    "ombra-L2": 130,
+    "ombra-L1": 610,
+    "dbtr-uvl": 48,
+    "manuale": 1
+  },
+  "nearPharmacy": {
+    "r100": {
+      "buildings": 36,
+      "osm-stima": 9,
+      "osm-tag": 0,
+      "ombra-L2": 3,
+      "ombra-L1": 0,
+      "dbtr-uvl": 24,
+      "manuale": 0
+    },
+    "r250": {
+      "buildings": 184,
+      "osm-stima": 86,
+      "osm-tag": 0,
+      "ombra-L2": 68,
+      "ombra-L1": 1,
+      "dbtr-uvl": 29,
+      "manuale": 0
+    },
+    "r400": {
+      "buildings": 360,
+      "osm-stima": 173,
+      "osm-tag": 0,
+      "ombra-L2": 116,
+      "ombra-L1": 34,
+      "dbtr-uvl": 37,
+      "manuale": 0
+    }
+  },
+  "shadowMethod": {
+    "sunAzimuthDeg": 172,
+    "sunElevationDeg": 51.2,
+    "parallaxPerMetre": [
+      -0.03,
+      0.24
+    ],
+    "accept": "contrasto buio/luce > 0,3 al bordo dell'ombra, ombra scura (> 0,55), almeno 40% / 30% dei pixel prima / dopo il bordo su terreno libero (niente tetti, alberi, prati)",
+    "calibration": {
+      "L2": {
+        "n": 19,
+        "biasM": 1.19,
+        "meanAbsErrM": 1.83,
+        "medianAbsErrM": 1.34
+      },
+      "L1": {
+        "n": 23,
+        "biasM": 0.77,
+        "meanAbsErrM": 1.9,
+        "medianAbsErrM": 1.74
+      }
+    }
+  },
+  "osmModelVsUVL": {
+    "n": 49,
+    "meanOSMminusUVL": -1.67,
+    "meanAbs": 5.27
+  },
+  "detail": "research/ortho-rer2025-viaggio/buildings-heights.json (cartella del progetto fuori da prototypes-viaggio, non pubblicata)"
+}

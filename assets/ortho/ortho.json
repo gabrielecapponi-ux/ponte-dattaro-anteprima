@@ -1,0 +1,506 @@
+{
+  "version": 1,
+  "generated": "2026-10-02",
+  "attribution": "Ortofoto RER 2025-26 RGB © Regione Emilia-Romagna, CC BY 4.0, dati elaborati",
+  "licence": {
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/deed.it"
+  },
+  "source": {
+    "dataset": "Ortofoto RER 2025-26 RGB (RER2025_26_C1_PAR_RGBI_RDN32)",
+    "service": "https://servizigis.regione.emilia-romagna.it/arcgis/rest/services/public/RER2025_26_RGB/ImageServer",
+    "flight": {
+      "date": "2025-04-05",
+      "tile": "32_60404959",
+      "layer": "QU_Ortofoto_RER2025_2026 (WMS metadati_raster)",
+      "request": "https://servizigis.regione.emilia-romagna.it/wms/metadati_raster?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=QU_Ortofoto_RER2025_2026,QU_LiDAR_RER2025_2026&QUERY_LAYERS=QU_Ortofoto_RER2025_2026,QU_LiDAR_RER2025_2026&STYLES=&CRS=EPSG:7791&BBOX=604262.24,4959440.88,604362.24,4959540.88&WIDTH=101&HEIGHT=101&I=50&J=50&INFO_FORMAT=application/geojson&FEATURE_COUNT=10",
+      "note": "DATA_1 della tavola 1x1 km che contiene la farmacia; anche il LiDAR RER 2025-26 della stessa tavola e del 2025-04-05."
+    },
+    "provenance": "../research/ortho-rer2025-viaggio/provenance.json"
+  },
+  "projection": {
+    "lat0": 44.7812037,
+    "lon0": 10.318493,
+    "R": 6378137,
+    "axes": "x est, z sud, metri"
+  },
+  "uv": "u = (x - x0) / (x1 - x0), v = (z - z0) / (z1 - z0); riga 0 dei dati = bordo nord (z0), nessun flipY",
+  "preview": {
+    "file": "lx-preview.webp",
+    "of": "LX",
+    "bounds": {
+      "x0": -7812,
+      "z0": -9292,
+      "x1": 8572,
+      "z1": 7092
+    },
+    "px": 1024,
+    "mpp": 16,
+    "bytes": 190416,
+    "meanSRGB": "#7a7b6b",
+    "edgeSRGB": "#797a69"
+  },
+  "levels": [
+    {
+      "name": "LX",
+      "label": "regione",
+      "bounds": {
+        "x0": -7812,
+        "z0": -9292,
+        "x1": 8572,
+        "z1": 7092
+      },
+      "mpp": 4,
+      "px": 4096,
+      "files": [
+        "lx-n.ktx2",
+        "lx-s.ktx2"
+      ],
+      "split": "rows",
+      "format": "ktx2-basis-etc1s",
+      "quality": 128,
+      "perceptual": false,
+      "mipmaps": true,
+      "bytes": 2724975,
+      "source": {
+        "file": "LX-local-4mpp.png",
+        "sha256": "a00ba161d27e1443f622be45e8f9856304cf093cf4bf8bdf29ad5f65c1cdc0f6"
+      }
+    },
+    {
+      "name": "L0",
+      "label": "città",
+      "bounds": {
+        "x0": -3716,
+        "z0": -5196,
+        "x1": 4476,
+        "z1": 2996
+      },
+      "mpp": 2,
+      "px": 4096,
+      "files": [
+        "l0-n.ktx2",
+        "l0-s.ktx2"
+      ],
+      "split": "rows",
+      "format": "ktx2-basis-etc1s",
+      "quality": 255,
+      "mipmaps": true,
+      "bytes": 3900112,
+      "source": {
+        "file": "L0-local-2mpp.png",
+        "sha256": "3ba7bb37380e2b4e1258ccc797985392eac862cace71e3d6dd17904e690ea28a"
+      }
+    },
+    {
+      "name": "L1",
+      "label": "quartiere",
+      "bounds": {
+        "x0": -1174,
+        "z0": -1024,
+        "x1": 874,
+        "z1": 1024
+      },
+      "mpp": 0.5,
+      "px": 4096,
+      "files": [
+        "l1-n.ktx2",
+        "l1-s.ktx2"
+      ],
+      "split": "rows",
+      "format": "ktx2-basis-etc1s",
+      "quality": 255,
+      "mipmaps": true,
+      "bytes": 3965135,
+      "source": {
+        "file": "L1-local-0_5mpp.png",
+        "sha256": "11d3f3f5dc18b59ab714d208b006c5dc598b0c359734eb3738fe6ad5c754d0ea"
+      }
+    },
+    {
+      "name": "L2",
+      "label": "strada",
+      "bounds": {
+        "x0": -509.6,
+        "z0": -409.6,
+        "x1": 309.6,
+        "z1": 409.6
+      },
+      "mpp": 0.2,
+      "px": 4096,
+      "files": [
+        "l2-n.ktx2",
+        "l2-s.ktx2"
+      ],
+      "split": "rows",
+      "format": "ktx2-basis-etc1s",
+      "quality": 255,
+      "mipmaps": true,
+      "bytes": 3781563,
+      "source": {
+        "file": "L2-local-0_2mpp.png",
+        "sha256": "557c80c672a30a984b8ca136c481560c3da47456b039bb98b1dc7135f03bf297"
+      }
+    }
+  ],
+  "coverage": {
+    "LX": {
+      "share": 1,
+      "samples": 65536,
+      "gridM": 64,
+      "borderToFootprintEdgeMinM": 1
+    },
+    "L0": {
+      "share": 1,
+      "samples": 16384,
+      "gridM": 64,
+      "borderToFootprintEdgeMinM": 4176
+    },
+    "L1": {
+      "share": 1,
+      "samples": 1024,
+      "gridM": 64,
+      "borderToFootprintEdgeMinM": 7816
+    },
+    "L2": {
+      "share": 1,
+      "samples": 169,
+      "gridM": 64,
+      "borderToFootprintEdgeMinM": 8392
+    },
+    "item": "RER2025_26_C1_PAR_RGBI_RDN32",
+    "note": "quota di ogni livello dentro l'impronta del volo RER 2025-26 (elemento di catalogo C1_PAR, unico entro 32 km); oltre il bordo del livello piu esterno la foschia (atmosphere.js) copre tutto"
+  },
+  "budget": {
+    "downloadBytes": 14662101,
+    "gpuBytes": {
+      "levels_etc2_or_bc1": 44739200,
+      "mask_etc2rgba_or_bc3": 546100,
+      "total": 45285300,
+      "preview_rgba8_transient": 5592405,
+      "levels_if_bc7": 89478400
+    },
+    "cpuBytes": {
+      "preview_rgb_for_sampleColor": 3145728,
+      "textures": 0
+    },
+    "note": "ortho.js esclude BC7 (8 bpp) quando c'e un formato a 4 bpp: ETC1S -> ETC1 in RGB_ETC2 su iPhone/Android/Mac, BC1 sui PC senza ETC; stessa qualita (i dati ETC1S la limitano), meta memoria. Mip caricati a fette (<= 1 MiB) e copie CPU liberate. L'anteprima RGBA8 (del livello piu esterno) si libera quando quel livello e a regime; resta la copia RGB per sampleColor."
+  },
+  "sun": {
+    "azimuthDeg": 172,
+    "elevationDeg": 51.2,
+    "dir": [
+      0.0871,
+      0.7798,
+      0.6199
+    ],
+    "shadowAzimuthDeg": 352,
+    "date": "2025-04-05",
+    "timeUTC": "11:01",
+    "timeLocal": "13:01 CEST",
+    "timeRangeUTC": [
+      "10:56",
+      "11:06"
+    ],
+    "solarNoonUTC": "11:21",
+    "shadows": {
+      "buildings": 13,
+      "shadowAzimuthMedian": 352,
+      "shadowAzimuthMAD": 2,
+      "elevationFromLengthsDeg": 50.9,
+      "elevationMAD": 1.3,
+      "ephemerisMinusShadowsDeg": 0.3
+    },
+    "confidence": "alta",
+    "method": "Direzione e lunghezza delle ombre misurate su L2 (0,2 m) con un modello di ombra proiettata dalle impronte OSM (massimo di sum(scurezza-0,5) sulla regione spazzata); altezze H_uvl dal DBTR (GetFeatureInfo). Azimut = mediana delle ombre - 180. Ora dal calcolo NOAA per la data di volo, elevazione dall'effemeride, confrontata con atan(H/L).",
+    "axes": "dir = versore verso il sole: x est, y su, z sud"
+  },
+  "alignment": {
+    "L1": {
+      "roofEdges": {
+        "n": 535,
+        "medianShift": [
+          -0.66,
+          0.7
+        ],
+        "meanAbsShift": 2.54,
+        "medianAbsShift": 2.11
+      },
+      "roofEdgesNear150m": {
+        "n": 30,
+        "medianShift": [
+          -1.19,
+          1.88
+        ],
+        "meanAbsShift": 2.87,
+        "medianAbsShift": 2.4
+      },
+      "pharmacyRoof": [
+        0,
+        3.3
+      ],
+      "pharmacyRoofEdgeFit": [
+        -1.93,
+        1.02
+      ],
+      "roadAxes": {
+        "n": 179,
+        "t": [
+          -0.56,
+          -0.86
+        ],
+        "medianResidual": 0.84,
+        "medianAbsAxisOffset": 1
+      },
+      "roadAxesNear300m": {
+        "n": 19,
+        "t": [
+          0.52,
+          -0.08
+        ],
+        "medianResidual": 0.81,
+        "medianAbsAxisOffset": 0.6
+      }
+    },
+    "correction": {
+      "appliedM": [
+        0,
+        0
+      ],
+      "reason": "A livello del suolo (assi stradali) lo scarto sistematico e sotto 1 m e cambia segno tra sottoinsiemi: e dentro l'incertezza di OSM. Lo spostamento dei tetti (circa 0,24 m per metro di altezza verso sud vicino alla farmacia, vedi parallax) e prospettico, perche l'ortofoto non e true-ortho: una traslazione non lo corregge. Per i tetti fotografati accanto agli edifici 3D c'e la maschera (mask)."
+    },
+    "L2": {
+      "roofEdges": {
+        "n": 301,
+        "medianShift": [
+          -0.95,
+          0.98
+        ],
+        "meanAbsShift": 2.91,
+        "medianAbsShift": 2.19
+      },
+      "roofEdgesNear150m": {
+        "n": 59,
+        "medianShift": [
+          -1.31,
+          1.69
+        ],
+        "meanAbsShift": 3.43,
+        "medianAbsShift": 2.8
+      },
+      "pharmacyRoof": [
+        0,
+        3.3
+      ],
+      "pharmacyRoofEdgeFit": [
+        -1.97,
+        1.05
+      ],
+      "roadAxes": {
+        "n": 23,
+        "t": [
+          -0.75,
+          -0.21
+        ],
+        "medianResidual": 1.07,
+        "medianAbsAxisOffset": 1.1
+      },
+      "roadAxesNear300m": {
+        "n": 14,
+        "t": [
+          -0.4,
+          -0.02
+        ],
+        "medianResidual": 0.9,
+        "medianAbsAxisOffset": 0.8
+      }
+    },
+    "note": "roofEdges: spostamento che porta i contorni OSM sui bordi dei tetti della foto (misura automatica, rumorosa: le piante OSM non hanno la misura dei tetti). pharmacyRoof: centro del tetto fotografato meno centro della pianta OSM, dal contorno tracciato a mano (parallax.pharmacy); pharmacyRoofEdgeFit: la misura automatica, distorta per la farmacia."
+  },
+  "parallax": {
+    "perMetre": [
+      -0.03,
+      0.24
+    ],
+    "eaveM": 1.5,
+    "meaning": "spostamento del tetto nella foto = altezza x perMetre (m, x est / z sud); vale vicino alla farmacia (maschera), altrove e indicativo",
+    "method": "misura a vista su ritagli L2 a 25-30 px/m di edifici con altezza DBTR: farmacia 13 m (+3,3 m a sud), osm#1282 15 m (+3,3 m), osm#1365 13 m (circa -1,5; +2,5 m)",
+    "pharmacy": {
+      "photoRoof": [
+        [
+          2.6,
+          -11.3
+        ],
+        [
+          16.1,
+          -5.7
+        ],
+        [
+          12.8,
+          8.4
+        ],
+        [
+          -1.8,
+          4.2
+        ]
+      ],
+      "photoRoofCentre": [
+        7.43,
+        -1.1
+      ],
+      "footprintCentre": [
+        7.42,
+        -4.39
+      ],
+      "shiftM": [
+        0,
+        3.3
+      ],
+      "photoRoofSidesM": [
+        14.6,
+        14.5,
+        15.2,
+        16.1
+      ],
+      "footprintSidesM": [
+        14.4,
+        11.8,
+        14.4,
+        11.8
+      ],
+      "note": "Tetto a padiglione fotografato (con gronde) circa 14,6-16,1 x 14,5-15,2 m contro 11,8 x 14,4 m della pianta OSM (way 179423185): il lato N-E (circa est-ovest) e piu largo di circa 3 m, piu di quanto spieghino gronde di 0,6-0,8 m per lato. La pianta OSM e probabilmente 2-2,5 m piu stretta del vero in quella direzione. Il tetto fotografato deborda di circa 2 m verso ovest (porta) e 3-5 m verso sud (Strada Montanara)."
+    }
+  },
+  "mask": {
+    "file": "mask.ktx2",
+    "files": [
+      "mask.ktx2"
+    ],
+    "bounds": {
+      "x0": -210,
+      "z0": -160,
+      "x1": 110,
+      "z1": 160
+    },
+    "mpp": 0.5,
+    "px": 640,
+    "format": "ktx2-basis-etc1s+alpha",
+    "bytes": 99900,
+    "content": "A = edificio fotografato (tetto spostato dalla parallasse, facciata visibile, gronde); RGB = foto con il suolo ricostruito (push-pull) sotto la maschera",
+    "buildings": 119,
+    "coverage": 0.382,
+    "source": {
+      "file": "mask-near-pharmacy.png",
+      "sha256": "c886327211a94d3c05a24cd4c4cfbc34df3852b7eff3783b723a4d625ccd7738"
+    }
+  },
+  "variants": [
+    {
+      "name": "telefono",
+      "qualities": [
+        "medium",
+        "low"
+      ],
+      "levels": [
+        {
+          "name": "L0",
+          "label": "città (telefono)",
+          "bounds": {
+            "x0": -3716,
+            "z0": -5196,
+            "x1": 4476,
+            "z1": 2996
+          },
+          "mpp": 4,
+          "px": 2048,
+          "files": [
+            "l0-m.ktx2"
+          ],
+          "split": "rows",
+          "format": "ktx2-basis-etc1s",
+          "quality": 255,
+          "perceptual": true,
+          "mipmaps": true,
+          "bytes": 989927,
+          "source": {
+            "file": "L0-local-2mpp.png",
+            "sha256": "3ba7bb37380e2b4e1258ccc797985392eac862cace71e3d6dd17904e690ea28a",
+            "op": "ridotto a 2048 px (lanczos3)"
+          }
+        },
+        {
+          "name": "L1",
+          "label": "quartiere (telefono)",
+          "bounds": {
+            "x0": -1174,
+            "z0": -1024,
+            "x1": 874,
+            "z1": 1024
+          },
+          "mpp": 1,
+          "px": 2048,
+          "files": [
+            "l1-m.ktx2"
+          ],
+          "split": "rows",
+          "format": "ktx2-basis-etc1s",
+          "quality": 255,
+          "perceptual": true,
+          "mipmaps": true,
+          "bytes": 1027014,
+          "source": {
+            "file": "L1-local-0_5mpp.png",
+            "sha256": "11d3f3f5dc18b59ab714d208b006c5dc598b0c359734eb3738fe6ad5c754d0ea",
+            "op": "ridotto a 2048 px (lanczos3)"
+          }
+        },
+        {
+          "name": "L2",
+          "label": "strada (telefono)",
+          "bounds": {
+            "x0": -307.2,
+            "z0": -102.4,
+            "x1": 102.4,
+            "z1": 307.2
+          },
+          "mpp": 0.2,
+          "px": 2048,
+          "files": [
+            "l2-m.ktx2"
+          ],
+          "split": "rows",
+          "format": "ktx2-basis-etc1s",
+          "quality": 255,
+          "perceptual": true,
+          "mipmaps": true,
+          "bytes": 958524,
+          "source": {
+            "file": "L2-local-0_2mpp.png",
+            "sha256": "557c80c672a30a984b8ca136c481560c3da47456b039bb98b1dc7135f03bf297",
+            "op": "ritaglio 2048 px da x -307.2, z -102.4"
+          }
+        }
+      ],
+      "note": "livelli leggeri per i telefoni (v8, scripts/build-ortho.mjs phone): sostituiscono L0, L1 e L2; LX non si carica sui telefoni (ORTHO_OPTIONS.outerQualities in src/journey-v8-config.js)"
+    }
+  ],
+  "previewC": {
+    "file": "l0-preview.webp",
+    "of": "L0",
+    "bounds": {
+      "x0": -3716,
+      "z0": -5196,
+      "x1": 4476,
+      "z1": 2996
+    },
+    "px": 1024,
+    "mpp": 8,
+    "bytes": 238846,
+    "source": {
+      "file": "L0-local-2mpp.png",
+      "sha256": "3ba7bb37380e2b4e1258ccc797985392eac862cace71e3d6dd17904e690ea28a",
+      "op": "ridotto a 1024 px (lanczos3)"
+    },
+    "note": "anteprima della città (v8): nel posto di L0 finché il KTX2 non arriva"
+  }
+}

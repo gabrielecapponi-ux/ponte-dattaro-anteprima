@@ -1,0 +1,736 @@
+{
+ "name": "Farmacia Ponte Dattaro — rilievo del fabbricato reale e del fronte su strada",
+ "version": 1,
+ "generated": "2026-10-03",
+ "generatedBy": "scripts/build-pharmacy-real.mjs da src/world/pharmacy-survey.js",
+ "units": "metri; mondo: x est, z sud, y alto, origine nel nodo OSM 4755106529 (proiezione di scripts/build-geo.mjs); y = 0 carreggiata",
+ "coordinates": {
+  "facade": "s = metri lungo la facciata sud dallo spigolo sud-ovest verso est; p = metri fuori dalla facciata (verso sud); h = metri sopra la pedana",
+  "local": "sistema locale della farmacia (shared.js pharmacyFrame): origine al centro della porta sulla linea di facciata, x = s - 6,95 (verso est), z = p (verso la strada), y = quota mondo"
+ },
+ "sources": [
+  {
+   "id": "foto",
+   "what": "foto autentica del fronte (dermatologiainfarmacia.it, precedente ad aprile 2025)",
+   "file": "prototypes/public/assets/history/pharmacy-strada-montanara.webp"
+  },
+  {
+   "id": "sv",
+   "what": "Street View aprile 2025 (e 2022-2024), solo consultato: 3 panorami (frontale, civico 25, civico 26), triangolazione",
+   "script": "scratchpad/verifica-ingresso/tri2.py"
+  },
+  {
+   "id": "osm",
+   "what": "OSM way 179423185 (import Regione 2012), nodo 4755106529, nodi civici 23a/23b/23c (import 2017)",
+   "licence": "ODbL"
+  },
+  {
+   "id": "rer",
+   "what": "ortofoto RER 2025 a 0,2 m/pixel (volo del 5 aprile 2025): tetto a padiglione circa 16,4 x 16,1 m con gronde, veranda grigia a est",
+   "licence": "CC BY 4.0"
+  },
+  {
+   "id": "spec",
+   "what": "research/ingresso-reale-spec.md (verifica del 2 ottobre 2026)"
+  }
+ ],
+ "uncertainty": {
+  "plan": "±0,3-0,5 m in pianta (spigoli, porta, palo); ±3° sulla direzione della facciata",
+  "heights": "±0,2-0,3 m (scala dalla distanza triangolata 10,1 m, corsi di mattoni 6,5 cm, persona 1,72 m)",
+  "cross": "centro 4,6-5,2 m da terra, lato 0,85-1,05 m, orientamento ±10°; non è certo se i bracci siano uno o due",
+  "depth": "profondità 14,3-15 m: spigoli nord non visti da vicino (stima da OSM e ortofoto)",
+  "trees": "specie (bagolari?) e posizione dei tronchi ±0,5 m",
+  "veranda": "pianta della veranda del bar e del dehors dalla sola ortofoto (±0,5 m)",
+  "ramp": "rampa ai garage: larghezza e pendenza stimate (non misurate)"
+ },
+ "osmError": "L'impronta OSM (11,8 x 14,3 m) è circa 3,7 m troppo stretta verso est e ruotata di circa 3°: il fronte sud reale è lungo circa 15,5 m (spigolo sud-est a (14,1; 5,7) contro (11,38; 4,07) in OSM).",
+ "facade": {
+  "bearingAlongDeg": 107.09,
+  "outwardNormal": [
+   -0.29,
+   0.96
+  ],
+  "outwardBearingDeg": 197.09,
+  "length": 15.5,
+  "depth": 14.6,
+  "source": [
+   "sv",
+   "rer"
+  ],
+  "corners": {
+   "SW": [
+    -0.7,
+    1.15
+   ],
+   "SE": [
+    14.12,
+    5.7
+   ],
+   "NE": [
+    18.41,
+    -8.25
+   ],
+   "NW": [
+    3.59,
+    -12.81
+   ]
+  },
+  "footprint": [
+   [
+    -0.7,
+    1.15
+   ],
+   [
+    3.59,
+    -12.81
+   ],
+   [
+    18.41,
+    -8.25
+   ],
+   [
+    14.12,
+    5.7
+   ]
+  ],
+  "footprintNote": "muri al piano terra, ordine SW, NW, NE, SE (come gli anelli OSM, area positiva)"
+ },
+ "levels": {
+  "road": 0,
+  "sidewalk": 0.15,
+  "pedana": 0.65,
+  "shopFloor": 0.65,
+  "stoneTop": 4.35,
+  "floors": [
+   4.55,
+   7.8,
+   11.05
+  ],
+  "sills": [
+   5.35,
+   8.55,
+   11.85
+  ],
+  "eave": 14.65,
+  "eaveAbovePedana": 14,
+  "eaveOverhang": 0.45,
+  "roof": "padiglione in coppi, apice al centro",
+  "roofPitch": 0.31,
+  "note": "quote mondo (y); gronda circa 14,0 m sopra la pedana (13,7-14,3), la pedana circa 0,5 m sopra il marciapiede"
+ },
+ "door": {
+  "centre": [
+   5.94,
+   3.19
+  ],
+  "centreLocal": [
+   0,
+   0
+  ],
+  "s": 6.95,
+  "normal": [
+   -0.29,
+   0.96
+  ],
+  "normalBearingDeg": 197.09,
+  "width": 1.1,
+  "height": 2.2,
+  "floorY": 0.65,
+  "kind": "porte scorrevoli automatiche a 2 ante, telaio nero",
+  "source": [
+   "sv",
+   "foto"
+  ]
+ },
+ "groundFloor": {
+  "lesenaW": [
+   0,
+   0.35
+  ],
+  "pierW": [
+   0.35,
+   0.9
+  ],
+  "erboristeria": [
+   0.9,
+   4.4
+  ],
+  "pierMid": [
+   4.4,
+   5.8
+  ],
+  "vending": [
+   4.4,
+   5.5
+  ],
+  "farmacia": [
+   5.8,
+   9.2
+  ],
+  "farmaciaParts": {
+   "fixedL": [
+    5.8,
+    6.4
+   ],
+   "doors": [
+    6.4,
+    7.5
+   ],
+   "fixedR": [
+    7.5,
+    8.7
+   ],
+   "mullion": [
+    8.7,
+    8.8
+   ],
+   "panel": [
+    8.8,
+    9.2
+   ]
+  },
+  "transom": [
+   2.2,
+   2.42
+  ],
+  "fascia": [
+   2.42,
+   3
+  ],
+  "letters": {
+   "farmacia": [
+    5.8,
+    8.4
+   ],
+   "h": [
+    2.47,
+    2.77
+   ]
+  },
+  "outlineCross": {
+   "s": 8.82,
+   "h": 2.69,
+   "size": 0.38
+  },
+  "hatch": {
+   "w": 0.3,
+   "h": [
+    1.07,
+    1.81
+   ]
+  },
+  "awning": {
+   "s": [
+    5.4,
+    9.55
+   ],
+   "top": 3.4,
+   "valance": 2.75,
+   "out": 0.9
+  },
+  "cornice": {
+   "s": [
+    5.4,
+    9.55
+   ],
+   "h": [
+    3.5,
+    3.6
+   ]
+  },
+  "pierB": [
+   9.2,
+   10.4
+  ],
+  "plaqueB": {
+   "s": 9.5,
+   "h": 2.45
+  },
+  "plaqueA": {
+   "s": 0.17,
+   "h": 2.45
+  },
+  "collectors": [
+   [
+    8.85,
+    9.4
+   ],
+   [
+    9.45,
+    10
+   ]
+  ],
+  "tabaccheria": [
+   10.4,
+   14.1
+  ],
+  "pierE": [
+   14.1,
+   15.15
+  ],
+  "lesenaE": [
+   15.15,
+   15.5
+  ],
+  "travertine": {
+   "s": [
+    0.9,
+    4.4
+   ],
+   "h": [
+    3,
+    3.7
+   ]
+  }
+ },
+ "upperFloors": {
+  "balconyW": [
+   0.15,
+   4.9
+  ],
+  "balconyE": [
+   10.6,
+   15.3
+  ],
+  "balconyDepth": 1.15,
+  "windows": [
+   6.1,
+   8.9
+  ],
+  "windowSize": [
+   1.25,
+   1.55
+  ],
+  "hedgeFloors": [
+   0,
+   2
+  ]
+ },
+ "pedana": {
+  "polygon": [
+   [
+    -0.7,
+    1.15
+   ],
+   [
+    14.12,
+    5.7
+   ],
+   [
+    12.88,
+    9.72
+   ],
+   [
+    -1.93,
+    5.16
+   ]
+  ],
+  "depth": 4.2,
+  "top": 0.65,
+  "stepsWest": {
+   "s": [
+    1.6,
+    4.2
+   ],
+   "polygon": [
+    [
+     -0.23,
+     5.06
+    ],
+    [
+     2.26,
+     5.83
+    ],
+    [
+     2.08,
+     6.4
+    ],
+    [
+     -0.4,
+     5.63
+    ]
+   ]
+  },
+  "stepsEast": {
+   "s": [
+    11.4,
+    13.5
+   ],
+   "polygon": [
+    [
+     9.14,
+     7.94
+    ],
+    [
+     11.15,
+     8.56
+    ],
+    [
+     10.97,
+     9.13
+    ],
+    [
+     8.96,
+     8.51
+    ]
+   ],
+   "handrail": "nero"
+  },
+  "risers": 3,
+  "tread": 0.3,
+  "parapet": {
+   "height": 0.95,
+   "post": 1.1,
+   "kind": "inox tubolare (dal 2025; prima fioriere in cotto)",
+   "along": "bordo verso il marciapiede (tranne i gradini) e bordo ovest sulla rampa"
+  },
+  "source": [
+   "sv"
+  ]
+ },
+ "street": {
+  "sidewalk": {
+   "p": [
+    4.2,
+    5.9
+   ],
+   "kind": "autobloccanti esagonali grigio-bruni"
+  },
+  "strip": {
+   "p": [
+    5.9,
+    7.9
+   ],
+   "kind": "grigliato erboso e masselli rettangolari, alberi, palo della croce, paletti, cestini"
+  },
+  "kerb": {
+   "p": 7.9,
+   "polyline": [
+    [
+     -6.84,
+     7.53
+    ],
+    [
+     16.38,
+     14.67
+    ]
+   ]
+  },
+  "lamp": {
+   "s": 7.45,
+   "p": 4.55,
+   "h": 3.5,
+   "position": [
+    5.08,
+    7.69
+   ]
+  },
+  "trees": [
+   {
+    "s": 4.8,
+    "p": 7,
+    "position": [
+     1.83,
+     9.25
+    ],
+    "kind": "grande latifoglia (bagolaro?)"
+   },
+   {
+    "s": 9.6,
+    "p": 7.05,
+    "position": [
+     6.4,
+     10.71
+    ],
+    "kind": "grande latifoglia (bagolaro?)"
+   }
+  ],
+  "note": "gli alberi veri stanno a circa 7 m dalla facciata: il filare OSM 648234110 è 2-4 m troppo vicino"
+ },
+ "crossSign": {
+  "pole": {
+   "position": [
+    1.33,
+    8.84
+   ],
+   "local": [
+    -2.75,
+    6.75
+   ],
+   "s": 4.2,
+   "p": 6.75,
+   "height": 5.2,
+   "diameter": 0.12,
+   "kind": "palo zincato autonomo, staffe, scatola grigia sotto il braccio"
+  },
+  "centre": {
+   "position": [
+    1.227,
+    4.95,
+    9.427
+   ],
+   "y": 4.95,
+   "local": [
+    -2.676,
+    4.95,
+    7.345
+   ],
+   "s": 4.274,
+   "p": 7.345,
+   "note": "a 0,6 m dall'asse del palo, nel piano della croce, lato strada: lo stesso punto di pharmacy.js (crossSign.position) e di journey-path.js (CROSS_LOCAL)"
+  },
+  "reach": 0.6,
+  "faceNormals": [
+   [
+    0.985,
+    0.174
+   ],
+   [
+    -0.985,
+    -0.174
+   ]
+  ],
+  "faceBearingsDeg": [
+   100,
+   280
+  ],
+  "size": 0.95,
+  "sizeNote": "pannello LED 0,90 m (60 x 60 punti, passo 15 mm) più la cornice",
+  "look": "croce greca a doppia faccia, cornice verde scuro, doppia fila di LED verdi sul contorno, + a puntini nei bracci verticali, FARMACIA in LED rossi orizzontale sul braccio orizzontale; accesa di giorno",
+  "source": [
+   "sv"
+  ]
+ },
+ "veranda": {
+  "s": [
+   15.5,
+   19.8
+  ],
+  "p": [
+   -6.8,
+   -0.3
+  ],
+  "height": 3.1,
+  "dehors": {
+   "s": [
+    15.5,
+    19.8
+   ],
+   "p": [
+    -0.3,
+    4.2
+   ]
+  },
+  "polygon": [
+   [
+    16.11,
+    -0.79
+   ],
+   [
+    20.22,
+    0.47
+   ],
+   [
+    18.31,
+    6.68
+   ],
+   [
+    14.2,
+    5.42
+   ]
+  ],
+  "dehorsPolygon": [
+   [
+    14.2,
+    5.42
+   ],
+   [
+    18.31,
+    6.68
+   ],
+   [
+    16.99,
+    10.98
+   ],
+   [
+    12.88,
+    9.72
+   ]
+  ],
+  "kind": "veranda vetrata a un piano del bar, profili scuri, tetto basso con bordo rossiccio; dehors rialzato con fioriere grigie",
+  "source": [
+   "rer",
+   "sv"
+  ]
+ },
+ "ramp": {
+  "s": [
+   -3.6,
+   0
+  ],
+  "p": [
+   -11.5,
+   4.2
+  ],
+  "bottom": -2.4,
+  "polygon": [
+   [
+    -1.05,
+    -10.99
+   ],
+   [
+    2.68,
+    -9.84
+   ],
+   [
+    -1.93,
+    5.16
+   ],
+   [
+    -5.66,
+    4.02
+   ]
+  ],
+  "kind": "rampa carrabile privata verso i garage (nord), ringhiere e cancello neri, muro di contenimento in cemento",
+  "source": [
+   "sv"
+  ]
+ },
+ "frontage": {
+  "polygon": [
+   [
+    -4.51,
+    -0.07
+   ],
+   [
+    18.72,
+    7.07
+   ],
+   [
+    16.38,
+    14.67
+   ],
+   [
+    -6.84,
+    7.53
+   ]
+  ],
+  "parts": {
+   "pedana": [
+    [
+     -0.7,
+     1.15
+    ],
+    [
+     14.12,
+     5.7
+    ],
+    [
+     12.88,
+     9.72
+    ],
+    [
+     -1.93,
+     5.16
+    ]
+   ],
+   "sidewalk": [
+    [
+     -5.76,
+     3.99
+    ],
+    [
+     17.47,
+     11.13
+    ],
+    [
+     16.97,
+     12.75
+    ],
+    [
+     -6.26,
+     5.61
+    ]
+   ],
+   "strip": [
+    [
+     -6.26,
+     5.61
+    ],
+    [
+     16.97,
+     12.75
+    ],
+    [
+     16.38,
+     14.67
+    ],
+    [
+     -6.84,
+     7.53
+    ]
+   ],
+   "dehors": [
+    [
+     14.2,
+     5.42
+    ],
+    [
+     18.31,
+     6.68
+    ],
+    [
+     16.99,
+     10.98
+    ],
+    [
+     12.88,
+     9.72
+    ]
+   ],
+   "ramp": [
+    [
+     -1.05,
+     -10.99
+    ],
+    [
+     2.68,
+     -9.84
+    ],
+    [
+     -1.93,
+     5.16
+    ],
+    [
+     -5.66,
+     4.02
+    ]
+   ]
+  },
+  "note": "pedana, marciapiede, striscia alberata, dehors e testa della rampa: li disegna pharmacy.js; il terreno (ground) non deve metterci strade, cordoli, alberi né arredi"
+ },
+ "frame": {
+  "D": [
+   5.94,
+   3.19
+  ],
+  "N": [
+   -0.29,
+   0.96
+  ],
+  "T": [
+   0.96,
+   0.29
+  ],
+  "corner": [
+   -0.7,
+   1.15
+  ],
+  "cornerX": -6.95,
+  "cornerEX": 8.55,
+  "floor": 0.65,
+  "groundFloor": 4.35,
+  "height": 14.65,
+  "depth": 14.6
+ }
+}
