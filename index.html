@@ -15,8 +15,8 @@
   <meta name="apple-mobile-web-app-title" content="Ponte Dattaro">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <!-- The first frame of the flight (17.5 km) before anything else: it is the page's first image. -->
-  <link rel="preload" as="image" href="./assets/journey/intro-poster-mobile.webp?v=v8y" media="(max-width:759.98px)" fetchpriority="high">
-  <link rel="preload" as="image" href="./assets/journey/intro-poster.webp?v=v8y" media="(min-width:760px)" fetchpriority="high">
+  <link rel="preload" as="image" href="./assets/film/poster-mobile.webp?v=v10b" media="(max-width:759.98px)" fetchpriority="high">
+  <link rel="preload" as="image" href="./assets/film/poster.webp?v=v10b" media="(min-width:760px)" fetchpriority="high">
   <script>
     // Decide before first paint whether the live 3D journey can run, so the
     // page never shifts from the static layout to the pinned one. A cheap
@@ -29,42 +29,18 @@
         if (q.has('solo-scena')) document.documentElement.classList.add('journey-capture');
         if (q.has('statico') || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
         if (!(window.CSS && CSS.supports('height', '100svh') && CSS.supports('height', '100lvh'))) return;
-        if (!('WebGL2RenderingContext' in window)) return;
+        // V10: the opening is a film (src/journey-film.js): no WebGL, no 3D downloads
         document.documentElement.classList.add('journey-live');
-        // Page images below the flight wait for its photos (src/media-release.js).
         document.documentElement.classList.add('media-deferred');
-        // Start the map download now; the scene reuses this promise and the
-        // street worker gets the same text (src/world/ground.js), no second request.
-        // parma-scena.json: parma-model.json without the far buildings the scene never
-        // reads from it (scripts/build-scene-geo.mjs): ~120 KB gzip instead of ~400.
-        window.__geoText = fetch('./assets/geo/parma-scena.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); });
-        window.__geo = window.__geoText.then(JSON.parse);
-        window.__geoText.catch(function () {}); window.__geo.catch(function () {});
-        // The orthophoto manifest and the two images of the first frame (the region and the city previews), in
-        // parallel with the 3D code instead of after it, once the poster is in (it stays the first image):
-        // src/world/ortho.js takes them from here.
-        var early = window.__orthoEarly = {}, started = false;
-        var fetchEarly = function () {
-          if (started) return;
-          started = true;
-          ['ortho/ortho.json', 'ortho/lx-preview.webp', 'ortho/l0-preview.webp'].forEach(function (f) {
-            early[f] = fetch('./assets/' + f).then(function (r) { if (!r.ok) throw new Error(r.status); return r.blob(); });
-            early[f].catch(function () {});
-          });
-        };
-        var poster = [].filter.call(document.querySelectorAll('link[rel=preload][as=image]'), function (l) { return !l.media || matchMedia(l.media).matches; })[0];
-        if (poster) { poster.addEventListener('load', fetchEarly); poster.addEventListener('error', fetchEarly); setTimeout(fetchEarly, 1500); } else fetchEarly();
-        // Fetch the 3D code in parallel (list filled in by the build, see vite.config.js).
-        ["./assets/sito-CCMHQ30Q.js","./assets/atmosphere-l0YlqZJG.js","./assets/three-DC_DBYxh.js","./assets/journey-scene-Y1zu0Tze.js","./assets/post-tone-BI-idYMK.js","./assets/ground-vi9DOMHw.js","./assets/city-BXHvahYw.js","./assets/pharmacy-ByfWjGfQ.js","./assets/post-DAq6Fqr-.js"].forEach(function (href) { var l = document.createElement('link'); l.rel = 'modulepreload'; l.crossOrigin = ''; l.href = href; document.head.appendChild(l); });
       } catch (e) {}
     })();
   </script>
   <noscript><style>
     @media(max-width:900px){.cin-header{position:relative!important;grid-template-columns:1fr!important}.cin-header nav{display:flex!important;position:static!important;grid-column:1/-1;flex-wrap:wrap;flex-direction:row!important;gap:8px!important;padding:12px 0 0!important}.header-actions{position:static!important;grid-column:1/-1!important;justify-self:stretch!important;display:flex!important;justify-content:flex-start}.menu-toggle{display:none!important}}
   </style></noscript>
-  <script type="module" crossorigin src="./assets/sito-CCMHQ30Q.js"></script>
+  <script type="module" crossorigin src="./assets/sito-DpTEDvU1.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/common-BJAAWmJM.js">
-  <link rel="stylesheet" crossorigin href="./assets/sito-DUr5Ny3d.css">
+  <link rel="stylesheet" crossorigin href="./assets/sito-CFJDAMdj.css">
 </head>
 <body class="cinematic-page">
   <a class="skip-link" href="#main">Vai al contenuto</a>
@@ -102,11 +78,11 @@
   <main id="main">
     <section class="journey" id="percorso" aria-labelledby="hero-title" data-journey>
       <div class="journey-options" role="group" aria-label="Controlli del viaggio">
-        <button id="journey-flight-toggle" type="button" hidden aria-pressed="false">Avvia il volo</button>
+        <button id="journey-flight-toggle" type="button" hidden aria-pressed="false">Avvia</button>
         <p class="journey-status" data-journey-status role="status"></p>
       </div>
       <div class="journey-stage" data-journey-stage>
-        <picture class="journey-poster" data-journey-poster aria-hidden="true"><source media="(max-width:759.98px)" srcset="./assets/journey/intro-poster-mobile.webp?v=v8y"><img src="./assets/journey/intro-poster.webp?v=v8y" width="1440" height="900" alt="" fetchpriority="high" decoding="async"></picture>
+        <picture class="journey-poster" data-journey-poster aria-hidden="true"><source media="(max-width:759.98px)" srcset="./assets/film/poster-mobile.webp?v=v10b"><img src="./assets/film/poster.webp?v=v10b" width="1920" height="1080" alt="" fetchpriority="high" decoding="async"></picture>
         <div class="journey-canvas" data-journey-canvas aria-hidden="true"></div>
         <div class="journey-ahead" data-journey-ahead aria-hidden="true"><img alt="" width="1600" height="1000" decoding="async"></div>
         <div class="journey-labels" data-journey-labels aria-hidden="true"></div>
@@ -116,7 +92,7 @@
           <h1 id="flight-title" data-flight-title>Parma, dall’alto.</h1>
           <p class="flight-address">Strada Montanara, 23/b · Parma</p>
           <a class="flight-whatsapp" href="https://wa.me/393890089249" target="_blank" rel="noopener noreferrer" aria-label="Scrivi su WhatsApp al 389 008 9249"><span>WhatsApp</span><strong>389 008 9249</strong><svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true"><path d="M5 15 15 5M5 5h10v10" stroke="currentColor" stroke-width="1.5"/></svg></a>
-          <p class="flight-helper" data-flight-helper><span class="flight-helper-motion">Scorri per accelerare la discesa.</span><span class="flight-helper-concept">Interno: ricostruzione di concept.</span></p>
+          <p class="flight-helper" data-flight-helper><span class="flight-helper-motion">Scorri per entrare.</span><span class="flight-helper-concept">Interno: ricostruzione di concept.</span></p>
         </div>
         <div class="journey-progress" aria-hidden="true"></div>
         <div class="journey-loading" data-journey-loading aria-hidden="true"></div>
@@ -133,7 +109,7 @@
 
       <div class="journey-chapters">
         <article class="journey-step journey-step--intro" id="tappa-mappa" data-step="0">
-          <figure class="journey-still"><img src="./assets/journey/still-mappa.webp?v=v8y" width="1600" height="1000" alt="Foto aerea di Parma vista dall’alto: il centro storico e, più a sud, il quartiere Montanara dove si trova la farmacia." loading="lazy" decoding="async"></figure>
+          <figure class="journey-still"><img src="./assets/journey/still-mappa.webp?v=v10b" width="1600" height="1000" alt="Ricostruzione 3D di Strada Montanara: la farmacia con l’insegna ERBORISTERIA e la croce verde a LED sul palo." loading="lazy" decoding="async"></figure>
           <div class="step-copy">
             <p class="step-kicker">Farmacia Ponte Dattaro · Parma, dal 1966</p>
             <h1 id="hero-title">La tua farmacia.<span>A Parma.</span></h1>
@@ -145,16 +121,16 @@
             <a class="step-whatsapp" href="https://wa.me/393890089249" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path d="M20 11.6a8 8 0 0 1-8.2 7.8 8.7 8.7 0 0 1-3.5-.7L4 20l1.2-4a7.4 7.4 0 0 1-1.4-4.4A8 8 0 0 1 12 3.8a8 8 0 0 1 8 7.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span>Scrivici su WhatsApp</span><span aria-hidden="true">↗</span></a>
           </div>
         </article>
-        <article class="journey-step" id="tappa-quartiere" data-step="1">
-          <figure class="journey-still"><img src="./assets/journey/still-quartiere.webp?v=v8y" width="1600" height="1000" alt="Il quartiere Montanara dall’alto, tra i torrenti Parma e Baganza." loading="lazy" decoding="async"></figure>
+        <article class="journey-step" id="tappa-quartiere" data-step="1" hidden>
+          <figure class="journey-still"><img src="./assets/journey/still-quartiere.webp?v=v10b" width="1600" height="1000" alt="Il quartiere Montanara dall’alto, tra i torrenti Parma e Baganza." loading="lazy" decoding="async"></figure>
           <div class="step-copy">
             <p class="step-kicker">Quartiere Montanara</p>
             <h2>Vicini, <span>dal 1966.</span></h2>
             <p class="step-text" data-geo-copy="quartiere">Una storia che nasce a Montanara. Un punto di riferimento per la tua salute.</p>
           </div>
         </article>
-        <article class="journey-step" id="tappa-strada" data-step="2">
-          <figure class="journey-still"><img src="./assets/journey/still-strada.webp?v=v8y" width="1600" height="1000" alt="Strada Montanara tra i grandi pini, con la farmacia sul lato nord." loading="lazy" decoding="async"></figure>
+        <article class="journey-step" id="tappa-strada" data-step="2" hidden>
+          <figure class="journey-still"><img src="./assets/journey/still-strada.webp?v=v10b" width="1600" height="1000" alt="Strada Montanara tra i grandi pini, con la farmacia sul lato nord." loading="lazy" decoding="async"></figure>
           <div class="step-copy">
             <p class="step-kicker">Strada Montanara, 23/b</p>
             <h2>Strada Montanara,<span>23/b.</span></h2>
@@ -163,7 +139,7 @@
           </div>
         </article>
         <article class="journey-step" id="tappa-facciata" data-step="3">
-          <figure class="journey-still"><img src="./assets/journey/still-facciata.webp?v=v8y" width="1600" height="1000" alt="Ricostruzione 3D: la croce verde a LED sul palo davanti alla farmacia, su Strada Montanara." loading="lazy" decoding="async"></figure>
+          <figure class="journey-still"><img src="./assets/journey/still-facciata.webp?v=v10b" width="1600" height="1000" alt="Ricostruzione 3D: la croce verde a LED sul palo davanti alla farmacia, su Strada Montanara." loading="lazy" decoding="async"></figure>
           <div class="step-copy">
             <p class="step-kicker">Dal 1966</p>
             <h2>Una storia<span>di cura.</span></h2>
@@ -171,7 +147,7 @@
           </div>
         </article>
         <article class="journey-step" id="tappa-ingresso" data-step="4">
-          <figure class="journey-still"><img src="./assets/journey/still-ingresso.webp?v=v8y" width="1600" height="1000" alt="Ricostruzione 3D dell’ingresso vero: le porte scorrevoli sotto la tenda e l’insegna FARMACIA, tra il distributore e i raccoglitori dei farmaci scaduti, si aprono sull’interno." loading="lazy" decoding="async"></figure>
+          <figure class="journey-still"><img src="./assets/journey/still-ingresso.webp?v=v10b" width="1600" height="1000" alt="Ricostruzione 3D dell’ingresso vero: le porte scorrevoli sotto la tenda e l’insegna FARMACIA, tra il distributore e i raccoglitori dei farmaci scaduti, si aprono sull’interno." loading="lazy" decoding="async"></figure>
           <div class="step-copy">
             <p class="step-kicker">Benvenuto</p>
             <h2>Entra. <span>Ti ascoltiamo.</span></h2>
@@ -179,7 +155,7 @@
           </div>
         </article>
         <article class="journey-step journey-step--services" id="tappa-interno" data-step="5">
-          <figure class="journey-still"><img src="./assets/journey/still-interno.webp?v=v8y" width="1600" height="1000" alt="Interno di concept: la croce in vetro smeraldo e gli strumenti per ECG, Holter e dermatoscopia." loading="lazy" decoding="async"></figure>
+          <figure class="journey-still"><img src="./assets/journey/still-interno.webp?v=v10b" width="1600" height="1000" alt="Interno di concept: la croce in vetro smeraldo e gli strumenti per ECG, Holter e dermatoscopia." loading="lazy" decoding="async"></figure>
           <div class="step-copy">
             <p class="step-kicker">Dentro la farmacia</p>
             <h2>I servizi,<span>da vicino.</span></h2>
@@ -228,6 +204,7 @@
     </section>
 
     <section class="story-section section-wrap" id="farmacia" aria-labelledby="story-title">
+      <figure class="history-photo"><img src="./assets/history/pharmacy-strada-montanara.webp" width="959" height="369" alt="La sede della Farmacia Ponte Dattaro in Strada Montanara, con le insegne Farmacia ed Erboristeria." loading="lazy" decoding="async"><figcaption>La sede di Strada Montanara <a href="https://dermatologiainfarmacia.it/farmacia-ponte-dattaro-parma" target="_blank" rel="noopener noreferrer">Fonte ↗</a></figcaption></figure>
       <div class="story-intro" data-reveal><h2 id="story-title">La tua farmacia,<br>dal 1966.</h2><p>A Montanara, il consiglio giusto comincia dall’ascolto.</p><ol class="history-dates" aria-label="Le tappe della farmacia"><li><strong>1966</strong><span>L’inizio</span></li><li><strong>1988</strong><span>La sede attuale</span></li><li><strong>1999</strong><span>Il dott. Bruschi</span></li></ol><details class="history-details"><summary>La nostra storia <span aria-hidden="true">+</span></summary><p>La Farmacia Ponte Dattaro nasce nel 1966, nel quartiere Montanara. Dal 1988 ci trovi in Strada Montanara, 23/b. Il dott. Enrico Bruschi guida la farmacia dal marzo 1999. Sette farmacisti e due impiegate accompagnano ogni giorno la comunità di Parma.</p><a class="text-button" href="https://www.farmaciaparma.it/chisiam2.html">Leggi sul sito ufficiale <span aria-hidden="true">↗</span></a></details></div>
     </section>
 
