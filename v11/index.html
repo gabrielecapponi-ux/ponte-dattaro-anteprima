@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="it" data-root="./">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title data-bind-text="metaTitle">Farmacia Ponte Dattaro, Parma — ECG, Holter e teledermatologia</title>
+  <meta name="description" content="Farmacia in Strada Montanara 23/b a Parma, dal 1966. ECG, Holter cardiaco e pressorio, teledermatologia su prenotazione. Chiamaci o scrivici su WhatsApp." data-bind-content="metaDescription">
+  <meta name="robots" content="noindex,nofollow">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Farmacia Ponte Dattaro">
+  <meta property="og:title" content="Farmacia Ponte Dattaro, Parma — ECG, Holter e teledermatologia">
+  <meta property="og:description" content="Farmacia in Strada Montanara 23/b a Parma, dal 1966. ECG, Holter cardiaco e pressorio, teledermatologia su prenotazione. Chiamaci o scrivici su WhatsApp.">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#FBFAF6">
+  
+  <link rel="icon" href="./assets/v7/icons/favicon-64.png" type="image/png" sizes="64x64">
+  <link rel="icon" href="./assets/v7/icons/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="./assets/v7/icons/apple-touch-icon.png">
+  <link rel="manifest" href="./assets/v7/icons/site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="Ponte Dattaro" data-bind-content="shortName">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <script>
+    // Decide before first paint whether the opening film can run, so the page never shifts from the static layout to
+    // the pinned one. A cheap check, before the stylesheets (an inline script after them would wait for them).
+    // V11: the decision also chooses what downloads: the film's poster (preloaded here, the page's first image) and
+    // the film only when it will be shown; data saver / 2G (pd-lite): the poster and «Guarda il filmato», the film
+    // only after that tap (src/journey-film.js); static version: neither.
+    (function () {
+      var h = document.documentElement;
+      // The film and its poster carry their addresses as data-src / data-srcset in the HTML: nothing downloads in the
+      // static version (?statico, reduced motion, old browsers) nor without JavaScript. When the film will play, a
+      // mutation observer gives them their address as the parser adds them (it runs before the video's own source
+      // selection, so the film starts as early as with a plain src). Data saver: the poster only (journey-film.js gives
+      // the film its address on «Guarda il filmato»).
+      function giveFilm(withFilm) {
+        var give = function () {
+          var list = document.querySelectorAll('[data-journey-poster] [data-srcset]');
+          for (var i = 0; i < list.length; i++) { list[i].setAttribute('srcset', list[i].getAttribute('data-srcset')); list[i].removeAttribute('data-srcset'); }
+          list = document.querySelectorAll('[data-journey-poster] img[data-src]' + (withFilm ? ', video[data-film] source[data-src]' : ''));
+          for (var j = 0; j < list.length; j++) { list[j].setAttribute('src', list[j].getAttribute('data-src')); list[j].removeAttribute('data-src'); }
+          var v = withFilm && list.length && document.querySelector('video[data-film]');
+          if (v && v.networkState === 3) v.load();   // the selection already gave up on sources without address
+        };
+        if (window.MutationObserver) new MutationObserver(give).observe(h, { childList: true, subtree: true });
+        document.addEventListener('DOMContentLoaded', give);
+      }
+      try {
+        var q = new URLSearchParams(location.search);
+        if (q.has('solo-scena')) h.classList.add('journey-capture');
+        if (q.has('statico') || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        if (!(window.CSS && CSS.supports('height', '100svh') && CSS.supports('height', '100lvh'))) return;
+        // V10: the opening is a film (src/journey-film.js): no WebGL, no 3D downloads
+        h.classList.add('journey-live');
+        h.classList.add('media-deferred');
+        var c = navigator.connection;
+        var lite = !!(c && (c.saveData || /(^|-)2g$/.test(c.effectiveType || '')));
+        if (lite) h.classList.add('pd-lite');
+        giveFilm(!lite);
+        [['./assets/film/poster-mobile.webp?v=v11b', '(max-width:759.98px), (max-aspect-ratio:9/10)'],
+         ['./assets/film/poster.webp?v=v10c', '(min-width:760px) and (min-aspect-ratio:9/10)']].forEach(function (p) {
+          var l = document.createElement('link');
+          l.rel = 'preload'; l.as = 'image'; l.href = p[0]; l.media = p[1]; l.setAttribute('fetchpriority', 'high');
+          document.head.appendChild(l);
+        });
+      } catch (e) {}
+    })();
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Pharmacy","@id":"https://www.farmaciaparma.it/#farmacia","name":"Farmacia Ponte Dattaro","description":"Farmacia in Strada Montanara 23/b a Parma, dal 1966. ECG, Holter cardiaco e pressorio, teledermatologia su prenotazione. Chiamaci o scrivici su WhatsApp.","url":"https://www.farmaciaparma.it/","logo":"https://www.farmaciaparma.it/assets/v7/icons/icon-512.png","image":"https://www.farmaciaparma.it/assets/v7/icons/icon-512.png","telephone":"+390521964011","email":"pontedattarofarmacia@gmail.com","vatID":"IT02072810340","foundingDate":"1966","address":{"@type":"PostalAddress","streetAddress":"Strada Montanara, 23/b","postalCode":"43124","addressLocality":"Parma","addressRegion":"PR","addressCountry":"IT"},"geo":{"@type":"GeoCoordinates","latitude":44.7812,"longitude":10.3185},"hasMap":"https://www.google.com/maps/search/?api=1&query=Farmacia%20Ponte%20Dattaro%20Strada%20Montanara%2023%2Fb%20Parma","areaServed":{"@type":"City","name":"Parma"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["https://schema.org/Monday","https://schema.org/Tuesday","https://schema.org/Wednesday","https://schema.org/Thursday","https://schema.org/Friday"],"opens":"08:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["https://schema.org/Saturday"],"opens":"08:30","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["https://schema.org/Saturday"],"opens":"15:30","closes":"19:30"}],"specialOpeningHoursSpecification":[{"@type":"OpeningHoursSpecification","validFrom":"2026-10-04","validThrough":"2026-10-04","opens":"08:30","closes":"19:30","description":"Farmacia di turno"},{"@type":"OpeningHoursSpecification","validFrom":"2026-12-05","validThrough":"2026-12-05","opens":"08:30","closes":"19:30","description":"Farmacia di turno"},{"@type":"OpeningHoursSpecification","validFrom":"2026-12-08","validThrough":"2026-12-08","opens":"00:00","closes":"00:00","description":"Festivo: chiuso salvo turno, verifica con la farmacia"},{"@type":"OpeningHoursSpecification","validFrom":"2026-12-25","validThrough":"2026-12-25","opens":"00:00","closes":"00:00","description":"Festivo: chiuso salvo turno, verifica con la farmacia"},{"@type":"OpeningHoursSpecification","validFrom":"2026-12-26","validThrough":"2026-12-26","opens":"00:00","closes":"00:00","description":"Festivo: chiuso salvo turno, verifica con la farmacia"},{"@type":"OpeningHoursSpecification","validFrom":"2027-01-01","validThrough":"2027-01-01","opens":"00:00","closes":"00:00","description":"Festivo: chiuso salvo turno, verifica con la farmacia"},{"@type":"OpeningHoursSpecification","validFrom":"2027-01-06","validThrough":"2027-01-06","opens":"00:00","closes":"00:00","description":"Festivo: chiuso salvo turno, verifica con la farmacia"},{"@type":"OpeningHoursSpecification","validFrom":"2027-01-13","validThrough":"2027-01-13","opens":"00:00","closes":"00:00","description":"Festivo: chiuso salvo turno, verifica con la farmacia"}],"priceRange":"€20–€62","currenciesAccepted":"EUR","contactPoint":[{"@type":"ContactPoint","contactType":"customer service","telephone":"+390521964011","availableLanguage":"it"},{"@type":"ContactPoint","contactType":"WhatsApp","url":"https://wa.me/393890089249","availableLanguage":"it"}],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Servizi in farmacia","itemListElement":[{"@type":"Offer","url":"https://www.farmaciaparma.it/servizi/ecg/","price":"20.00","priceCurrency":"EUR","description":"€20,00","seller":{"@id":"https://www.farmaciaparma.it/#farmacia"},"itemOffered":{"@type":["Service","MedicalTest"],"@id":"https://www.farmaciaparma.it/servizi/ecg/#servizio","name":"Elettrocardiogramma","url":"https://www.farmaciaparma.it/servizi/ecg/"}},{"@type":"Offer","url":"https://www.farmaciaparma.it/servizi/teledermatologia/","price":"35.00","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","minPrice":"35.00","priceCurrency":"EUR"},"description":"da €35,00 · €35 per una problematica, €50 fino a tre problematiche.","seller":{"@id":"https://www.farmaciaparma.it/#farmacia"},"itemOffered":{"@type":"Service","@id":"https://www.farmaciaparma.it/servizi/teledermatologia/#servizio","name":"Teledermatologia","url":"https://www.farmaciaparma.it/servizi/teledermatologia/"}},{"@type":"Offer","url":"https://www.farmaciaparma.it/servizi/holter-pressorio/","price":"41.30","priceCurrency":"EUR","description":"€41,30","seller":{"@id":"https://www.farmaciaparma.it/#farmacia"},"itemOffered":{"@type":["Service","MedicalTest"],"@id":"https://www.farmaciaparma.it/servizi/holter-pressorio/#servizio","name":"Holter pressorio","url":"https://www.farmaciaparma.it/servizi/holter-pressorio/"}},{"@type":"Offer","url":"https://www.farmaciaparma.it/servizi/holter-cardiaco/","price":"62.00","priceCurrency":"EUR","description":"€62,00 · Per la registrazione di 48 ore ti confermiamo il prezzo quando prenoti.","seller":{"@id":"https://www.farmaciaparma.it/#farmacia"},"itemOffered":{"@type":["Service","MedicalTest"],"@id":"https://www.farmaciaparma.it/servizi/holter-cardiaco/#servizio","name":"Holter cardiaco","url":"https://www.farmaciaparma.it/servizi/holter-cardiaco/"}}]},"potentialAction":{"@type":"ReserveAction","name":"Prenota un servizio","target":{"@type":"EntryPoint","urlTemplate":"https://www.farmaciaparma.it/prenota2.html","inLanguage":"it"}}},{"@type":"WebSite","@id":"https://www.farmaciaparma.it/#sito","url":"https://www.farmaciaparma.it/","name":"Farmacia Ponte Dattaro","inLanguage":"it-IT","publisher":{"@id":"https://www.farmaciaparma.it/#farmacia"}}]}</script>
+  <!-- V11: accessibility pass (contrast, text size, touch targets, focus): keep it the last stylesheet. -->
+  <!--noscript:start--><noscript><style>
+    @media(max-width:900px){.cin-header{position:relative!important;grid-template-columns:1fr!important}.cin-header nav{display:flex!important;position:static!important;grid-column:1/-1;flex-wrap:wrap;flex-direction:row!important;gap:8px!important;padding:12px 0 0!important}.header-actions{position:static!important;grid-column:1/-1!important;justify-self:stretch!important;display:flex!important;justify-content:flex-start}.menu-toggle{display:none!important}}
+    [data-module]:empty{display:none!important}a[href$="#team"],a[href$="#ordina"],a[href$="#ricetta"]{display:none!important}
+  </style></noscript><!--noscript:end-->
+  <script type="module" crossorigin src="./assets/sito-Cf6-bJt3.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/texts-DTYXJfVM.js">
+  <link rel="modulepreload" crossorigin href="./assets/common-Cq22fwGq.js">
+  <link rel="modulepreload" crossorigin href="./assets/analytics-DxCIPu6U.js">
+  <link rel="modulepreload" crossorigin href="./assets/opening-hours-BSsYUP5f.js">
+  <link rel="stylesheet" crossorigin href="./assets/common-DMwVS4d7.css">
+  <link rel="stylesheet" crossorigin href="./assets/analytics-BsA3olCV.css">
+  <link rel="stylesheet" crossorigin href="./assets/opening-hours-D5CrBvum.css">
+  <link rel="stylesheet" crossorigin href="./assets/sito-DzTojCxy.css">
+</head>
+<body class="cinematic-page">
+  <!-- V11: this page is a template. The pharmacy's own data (data-bind*: phone, WhatsApp, email, address, name, owner,
+       VAT, maps, hours, useful links, image texts) and the short texts (data-text*) are written from content/site.json
+       by build/pages.mjs and by Vite (src/data/bindings.js, src/data/texts.js), and again in the browser for a panel draft.
+       The words written here are only the fallback: never edit a phone number or a name in this file. -->
+  <a class="skip-link" href="#main">Vai al contenuto</a>
+  <header class="cin-header">
+    <div class="brand">
+      <button class="brand-cross" type="button" data-brand-cross aria-label="Fai girare la croce">
+        <img src="./assets/cross-logo-header-poster.webp" data-poster="./assets/cross-logo-header-poster.webp" data-animation="./assets/cross-logo-header-motion.webp" width="160" height="160" alt="" fetchpriority="high">
+        <span class="brand-cross-pause" aria-hidden="true">Ⅱ</span>
+      </button>
+      <a class="brand-name" href="./" aria-label="Farmacia Ponte Dattaro, inizio pagina" data-bind-aria="{name}, inizio pagina"><span class="brand-kicker" data-bind-text="brandKicker">Farmacia</span><strong data-bind-text="brandStrong">Ponte Dattaro</strong></a>
+    </div>
+    <nav id="cin-navigation" data-mobile-menu aria-label="Navigazione principale">
+      <a href="#servizi">Servizi</a><a href="#team" data-requires-module="team">Il team</a><a href="#farmacia" data-requires-module="story">La farmacia</a><a href="#materia" data-requires-module="signature">Il nostro simbolo</a><a href="#contatti">Contatti</a>
+    </nav>
+    <div class="header-actions">
+      <a class="nav-book" href="#servizi" data-book aria-haspopup="dialog" aria-label="Prenota un servizio">Prenota</a>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="cin-navigation"><span class="menu-label">Menu</span><span class="menu-lines" aria-hidden="true"></span></button>
+    </div>
+    <div class="header-utility">
+      <details class="opening-hours" data-opening-hours>
+        <summary aria-label="Stato di apertura e orari della farmacia"><span class="opening-dot" aria-hidden="true"></span><span class="opening-brief"><strong data-opening-state>Orari</strong><span data-opening-next data-bind-text="hoursBrief">Lun–ven 08:30–19:30</span></span><span class="opening-chevron" aria-hidden="true">⌄</span></summary>
+        <div class="opening-panel">
+          <h2>Quando ci trovi</h2>
+          <p data-opening-today data-bind-text="hoursToday">Orari ordinari · ora di Parma</p>
+          <dl data-bind-list="hoursRows"><div><dt>Lunedì — venerdì</dt><dd>08:30–19:30</dd></div><div><dt>Sabato</dt><dd>08:30–13:00<br>15:30–19:30</dd></div><div><dt>Domenica</dt><dd>Riposo, salvo turno</dd></div></dl>
+          <p class="opening-turn" data-opening-turn></p>
+          <p class="opening-note" data-bind-text="hoursNote">Domenica e festivi: verifica i turni.</p>
+          <div class="opening-sources" data-bind-list="hoursSources"><a href="https://www.ausl.pr.it/dove_curarsi/farmacie_parma/farmacia_ponte_dattaro.aspx" target="_blank" rel="noopener noreferrer">Turni AUSL <span aria-hidden="true">↗</span><span class="sr-only"> (si apre in una nuova scheda)</span></a></div>
+        </div>
+      </details>
+      <a class="utility-whatsapp" href="https://wa.me/393890089249" target="_blank" rel="noopener noreferrer" aria-label="Scrivi alla farmacia su WhatsApp, 389 008 9249" data-bind="wa" data-bind-aria="Scrivi alla farmacia su WhatsApp, {whatsapp}"><span class="pulse-icon pulse-icon--wa"><svg class="pulse-glyph" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#25D366" d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.3 21.7l4.8-1.3A9.8 9.8 0 1 0 12 2.2Z"/><path fill="#fff" d="M16.9 14.4c-.3-.1-1.6-.8-1.8-.9-.3-.1-.4-.1-.6.1l-.8 1c-.2.2-.3.2-.6.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-2c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.8.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.6.5-.1 1.6-.6 1.8-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.6-.3Z"/></svg></span>WhatsApp</a>
+      <a class="utility-phone" href="tel:+390521964011" aria-label="Chiama la farmacia al 0521 964011" data-bind="tel" data-bind-aria="Chiama la farmacia al {phone}"><span class="pulse-icon pulse-icon--phone"><svg class="pulse-glyph" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg></span><bdi data-bind-text="phone">0521 964011</bdi></a>
+    </div>
+  </header>
+  <main id="main">
+    <section class="journey" id="percorso" aria-labelledby="hero-title" data-journey>
+      <div class="journey-options" role="group" aria-label="Controlli del viaggio">
+        <button id="journey-flight-toggle" type="button" hidden aria-pressed="false">Avvia</button>
+        <p class="journey-status" data-journey-status role="status"></p>
+      </div>
+      <div class="journey-stage" data-journey-stage>
+        <picture class="journey-poster" data-journey-poster aria-hidden="true"><source media="(max-width:759.98px), (max-aspect-ratio:9/10)" data-srcset="./assets/film/poster-mobile.webp?v=v11b"><img data-src="./assets/film/poster.webp?v=v10c" width="1920" height="1080" alt="" fetchpriority="high" decoding="async"></picture>
+        <div class="journey-canvas" data-journey-canvas aria-hidden="true"><video class="journey-film" data-film muted autoplay playsinline webkit-playsinline preload="auto" disablepictureinpicture disableremoteplayback aria-hidden="true">
+          <!-- V10: the film starts downloading while the page is parsed. Phones (and tall windows): the vertical cut.
+               HEVC first (smaller at the same quality, hardware decoded on iPhone and Mac Safari), H.264 for the rest.
+               The short codec string ("hvc1") keeps Chrome on H.264 on purpose: measured on a throttled phone profile,
+               its HEVC path started the film ~65 ms later (the full string "hvc1.1.6.L93.90" would switch it).
+               V11: phones get the vertical cut at 720×1280 (4.6 MB H.264 / 3.5 MB HEVC instead of 11.8 / 7.5 MB: it
+               plays smoothly on a 4G line), large portrait screens keep 1080×1920. With «Riduci movimento» no source
+               matches (prefers-reduced-motion in the media). The addresses are data-src: the head script gives them
+               only when the film will play (giveFilm); static version, data saver and no JavaScript: no download. -->
+          <source media="(min-width:760px) and (max-aspect-ratio:9/10) and (prefers-reduced-motion: no-preference)" data-src="./assets/film/film-mobile.hevc.mp4?v=v11b" type='video/mp4; codecs="hvc1"'>
+          <source media="(min-width:760px) and (max-aspect-ratio:9/10) and (prefers-reduced-motion: no-preference)" data-src="./assets/film/film-mobile.mp4?v=v11b" type="video/mp4">
+          <source media="(max-width:759.98px) and (prefers-reduced-motion: no-preference)" data-src="./assets/film/film-mobile-720.hevc.mp4?v=v11b" type='video/mp4; codecs="hvc1"'>
+          <source media="(max-width:759.98px) and (prefers-reduced-motion: no-preference)" data-src="./assets/film/film-mobile-720.mp4?v=v11b" type="video/mp4">
+          <source media="(prefers-reduced-motion: no-preference)" data-src="./assets/film/film.hevc.mp4?v=v11b" type='video/mp4; codecs="hvc1"'>
+          <source media="(prefers-reduced-motion: no-preference)" data-src="./assets/film/film.mp4?v=v11b" type="video/mp4">
+        </video></div>
+        <div class="journey-ahead" data-journey-ahead aria-hidden="true"><img alt="" width="1600" height="1000" decoding="async"></div>
+        <div class="journey-labels" data-journey-labels aria-hidden="true"></div>
+        <div class="journey-veil" aria-hidden="true"></div>
+        <div class="flight-caption" data-flight-caption hidden aria-hidden="true">
+          <p class="flight-location" data-flight-location data-bind-text="name">Farmacia Ponte Dattaro</p>
+          <h1 id="flight-title" data-flight-title><span class="sr-only" data-flight-title-fixed data-text-caption="hero">La tua farmacia. A Parma.</span><span class="flight-title-live" data-flight-title-live aria-hidden="true"></span></h1>
+          <p class="flight-address" data-pharmacy-address data-bind-text="address">Strada Montanara, 23/b · Parma</p>
+          <a class="flight-whatsapp" href="https://wa.me/393890089249" target="_blank" rel="noopener noreferrer" aria-label="Scrivi su WhatsApp al 389 008 9249" data-bind="wa" data-bind-aria="Scrivi su WhatsApp al {whatsapp}"><span>WhatsApp</span><strong data-bind-text="whatsapp">389 008 9249</strong><svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true"><path d="M5 15 15 5M5 5h10v10" stroke="currentColor" stroke-width="1.5"/></svg></a>
+          <p class="flight-helper" data-flight-helper><span class="flight-helper-motion">Scorri per entrare.</span><span class="flight-helper-concept">Interno: ricostruzione di concept.</span></p>
+        </div>
+        <div class="journey-progress" aria-hidden="true"></div>
+        <div class="journey-loading" data-journey-loading aria-hidden="true"></div>
+        <a class="journey-skip" href="#servizi" data-journey-skip>Salta il percorso <span aria-hidden="true">↓</span></a>
+
+        <!-- V11 quick actions (site.cta.quick, rendered again by src/modules/booking.js: this markup is its fallback).
+             Their styles load here, with the markup (a stylesheet link is allowed in the body), not with a module. -->
+        <div class="journey-quicklinks pd-quick" data-pd-quick role="group" aria-label="Azioni rapide">
+          <a class="pd-quick__btn pd-quick__btn--primary solid-button" data-cta="prenota" data-cta-action="booking" href="#servizi" data-book><span class="pd-cta__icon ico-lead" aria-hidden="true"><svg class="pd-icon pd-icon--prenota" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 9.8h17M8 3v4M16 3v4"/><path class="pd-i-accent" d="m9.2 15.1 2 2 3.8-3.9"/></svg></span><span class="pd-cta__label">Prenota un servizio</span></a>
+          <a class="pd-quick__btn ghost-button" data-cta="whatsapp" data-cta-action="whatsapp" data-bind="wa" href="https://wa.me/393890089249" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp: scrivi alla farmacia"><span class="pd-cta__icon ico-lead" aria-hidden="true"><svg class="pd-icon pd-icon--whatsapp" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3.6a8.3 8.3 0 0 0-7.2 12.5L3.6 20.4l4.4-1.2A8.3 8.3 0 1 0 12 3.6Z"/><path class="pd-i-accent" d="M9.6 8.6c-.5 1.2-.1 2.8 1.2 4.2 1.4 1.4 3 1.8 4.2 1.3l.5-1.3-1.7-.9-.8.8a4.4 4.4 0 0 1-1.7-1.7l.8-.8-.9-1.7Z"/></svg></span><span class="pd-cta__label">WhatsApp</span></a>
+          <a class="pd-quick__btn ghost-button" data-cta="indicazioni" data-cta-action="directions" data-bind="directions" href="https://www.google.com/maps/dir/?api=1&amp;destination=Farmacia%20Ponte%20Dattaro%2C%20Strada%20Montanara%2023%2Fb%2C%2043124%20Parma" target="_blank" rel="noopener noreferrer" aria-label="Indicazioni: apri il percorso fino alla farmacia (si apre la mappa)"><span class="pd-cta__icon ico-lead" aria-hidden="true"><svg class="pd-icon pd-icon--indicazioni" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21.2s-6.8-5.6-6.8-11.2a6.8 6.8 0 0 1 13.6 0c0 5.6-6.8 11.2-6.8 11.2Z"/><path class="pd-i-accent" d="M12 7.6v4.8M9.6 10h4.8"/></svg></span><span class="pd-cta__label">Indicazioni</span></a>
+          <a class="pd-quick__btn ghost-button" data-cta="ordina" data-cta-action="order" href="#ordina" data-order data-requires-module="ordina"><span class="pd-cta__icon ico-lead" aria-hidden="true"><svg class="pd-icon pd-icon--ordina" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5.5 8.5h13l-.9 10.2a2.5 2.5 0 0 1-2.5 2.3H8.9a2.5 2.5 0 0 1-2.5-2.3Z"/><path d="M9 8.5V7a3 3 0 0 1 6 0v1.5"/><path class="pd-i-accent" d="M12 12.4v4.4M9.8 14.6h4.4"/></svg></span><span class="pd-cta__label">Ordina e ritira</span></a>
+        </div>
+        <!-- V11: the film is a photorealistic reconstruction generated with AI: the stage says so in plain words, on
+             phones too (the video itself is aria-hidden). The open-data sources of the 3D model it comes from (CC BY,
+             ODbL) are on fonti.html#crediti and in «Come è fatto il filmato» below. One link, last in the tab order. -->
+        <p class="journey-credit" data-journey-credit><span>Ricostruzione con l’IA ·</span> <a href="./fonti.html#filmato">Come è fatta<span class="sr-only">: il filmato non è una ripresa, fonti e crediti</span></a></p>
+
+        
+      </div>
+
+      <div class="journey-chapters">
+        <article class="journey-step journey-step--intro" id="tappa-mappa" data-step="0">
+          <figure class="journey-still"><img src="./assets/journey/still-mappa.webp?v=v10c" srcset="./assets/journey/still-mappa-480.webp?v=v11a 480w, ./assets/journey/still-mappa-800.webp?v=v11a 800w, ./assets/journey/still-mappa-1200.webp?v=v11a 1200w, ./assets/journey/still-mappa.webp?v=v10c 1600w" sizes="(max-width:759.98px) calc(100vw - 40px), 45vw" width="1600" height="900" alt="Ricostruzione 3D di Strada Montanara: la farmacia con l’insegna ERBORISTERIA e la croce verde a LED sul palo." data-bind-alt="stillMappa" loading="lazy" decoding="async"><figcaption class="still-tag">Ricostruzione con l’IA</figcaption></figure><script>
+            // static version (no film): this photo is the first screen's image, not a lazy one (with the film it stays hidden)
+            (function (i) { if (i && !document.documentElement.classList.contains('journey-live')) { i.loading = 'eager'; i.fetchPriority = 'high'; } })(document.currentScript.previousElementSibling.querySelector('img'));
+          </script>
+          <div class="step-copy">
+            <p class="step-kicker" data-text="heroKicker" data-text-optional>Farmacia Ponte Dattaro · Parma, dal 1966</p>
+            <h1 id="hero-title" data-text-title="hero">La tua farmacia. <span>A Parma.</span></h1>
+            <p class="step-text" data-text-lead="heroSubtitle"><strong>ECG, Holter e teledermatologia.</strong><br>La cura di ogni giorno, nel quartiere Montanara.</p>
+            <!-- V11: the address (pharmacy.address) and the actions of site.cta.quick, rendered again by src/modules/index.js
+                 (quick-actions.js → renderStaticHeroQuick); this markup is their fallback without JavaScript. -->
+            <p class="step-address"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path d="M12 21.2s-6.8-5.6-6.8-11.2a6.8 6.8 0 0 1 13.6 0c0 5.6-6.8 11.2-6.8 11.2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.5"/></svg><span data-pharmacy-address data-bind-text="address">Strada Montanara, 23/b · Parma</span></p>
+            <div class="step-actions" data-static-quick>
+              <a class="solid-button" href="#servizi" data-book aria-haspopup="dialog" data-static-cta>Prenota un servizio <span aria-hidden="true">→</span></a>
+              <a class="ghost-button" href="#servizi">Scopri i servizi <span aria-hidden="true">↓</span></a>
+            </div>
+            <a class="step-whatsapp" href="https://wa.me/393890089249" target="_blank" rel="noopener noreferrer" data-static-cta data-bind="wa"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path d="M20 11.6a8 8 0 0 1-8.2 7.8 8.7 8.7 0 0 1-3.5-.7L4 20l1.2-4a7.4 7.4 0 0 1-1.4-4.4A8 8 0 0 1 12 3.8a8 8 0 0 1 8 7.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span>Scrivici su WhatsApp</span><span aria-hidden="true">↗</span></a>
+            <a class="step-whatsapp step-directions" href="https://www.google.com/maps/dir/?api=1&amp;destination=Farmacia%20Ponte%20Dattaro%2C%20Strada%20Montanara%2023%2Fb%2C%2043124%20Parma" target="_blank" rel="noopener noreferrer" data-static-cta data-bind="directions"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path d="M12 21.2s-6.8-5.6-6.8-11.2a6.8 6.8 0 0 1 13.6 0c0 5.6-6.8 11.2-6.8 11.2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.5"/></svg><span>Indicazioni stradali</span><span aria-hidden="true">↗</span></a>
+            <a class="step-whatsapp step-order" href="#ordina" data-order data-requires-module="ordina" data-static-cta><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 8.5h13l-.9 10.2a2.5 2.5 0 0 1-2.5 2.3H8.9a2.5 2.5 0 0 1-2.5-2.3Z"/><path d="M9 8.5V7a3 3 0 0 1 6 0v1.5"/><path d="M12 12.4v4.4M9.8 14.6h4.4"/></svg><span>Ordina e ritira</span><span aria-hidden="true">↓</span></a>
+          </div>
+        </article>
+        <article class="journey-step" id="tappa-facciata" data-step="3">
+          <figure class="journey-still"><img src="./assets/journey/still-facciata.webp?v=v10c" srcset="./assets/journey/still-facciata-240.webp?v=v11a 240w, ./assets/journey/still-facciata-480.webp?v=v11a 480w, ./assets/journey/still-facciata-800.webp?v=v11a 800w, ./assets/journey/still-facciata.webp?v=v10c 1600w" sizes="(max-width:759.98px) 80px, 110px" width="1600" height="900" alt="Ricostruzione 3D: la croce verde a LED sul palo davanti alla farmacia, su Strada Montanara." data-bind-alt="stillFacciata" loading="lazy" decoding="async"></figure>
+          <div class="step-copy">
+            <p class="step-kicker" data-text="storyKicker" data-text-optional>Dal 1966</p>
+            <h2 data-text-title="story">Una storia <span>di cura.</span></h2>
+            <p class="step-text" data-text="storyTeaser" data-text-optional>Sette farmacisti e due impiegate, guidati dal dott. Enrico Bruschi. Un consiglio che comincia dall’ascolto.</p>
+          </div>
+        </article>
+        <article class="journey-step" id="tappa-ingresso" data-step="4">
+          <figure class="journey-still"><img src="./assets/journey/still-ingresso.webp?v=v10c" srcset="./assets/journey/still-ingresso-240.webp?v=v11a 240w, ./assets/journey/still-ingresso-480.webp?v=v11a 480w, ./assets/journey/still-ingresso-800.webp?v=v11a 800w, ./assets/journey/still-ingresso.webp?v=v10c 1600w" sizes="(max-width:759.98px) 80px, 110px" width="1600" height="900" alt="Ricostruzione 3D dell’ingresso vero: le porte scorrevoli sotto la tenda e l’insegna FARMACIA, tra il distributore e i raccoglitori dei farmaci scaduti, si aprono sull’interno." data-bind-alt="stillIngresso" loading="lazy" decoding="async"></figure>
+          <div class="step-copy">
+            <p class="step-kicker">Benvenuto</p>
+            <h2>Entra. <span>Ti ascoltiamo.</span></h2>
+            <p class="step-text">Farmaci, integratori, dermocosmesi e un consiglio che parte da te.</p>
+          </div>
+        </article>
+        <article class="journey-step journey-step--services" id="tappa-interno" data-step="5">
+          <figure class="journey-still"><img src="./assets/journey/still-interno.webp?v=v10c" srcset="./assets/journey/still-interno-480.webp?v=v11a 480w, ./assets/journey/still-interno-800.webp?v=v11a 800w, ./assets/journey/still-interno-1200.webp?v=v11a 1200w, ./assets/journey/still-interno.webp?v=v10c 1600w" sizes="(max-width:759.98px) calc(100vw - 40px), 45vw" width="1600" height="900" alt="Interno di concept: la croce in vetro smeraldo e gli strumenti per ECG, Holter e dermatoscopia." data-bind-alt="stillInterno" loading="lazy" decoding="async"></figure>
+          <div class="step-copy">
+            <p class="step-kicker">Dentro la farmacia</p>
+            <h2>I servizi, <span>da vicino.</span></h2>
+            <ul class="step-services" aria-label="Servizi su prenotazione" data-step-services>
+              <li><a href="#servizi" data-jump-filter="Cuore">ECG <span>€20,00</span></a></li>
+              <li><a href="#servizi" data-jump-filter="Cuore">Holter cardiaco <span>€62,00</span></a></li>
+              <li><a href="#servizi" data-jump-filter="Pressione">Holter pressorio <span>€41,30</span></a></li>
+              <li><a href="#servizi" data-jump-filter="Pelle">Teledermatologia <span>da €35,00</span></a></li>
+            </ul>
+            <div class="step-actions">
+              <a class="solid-button" href="#servizi">Scegli il servizio <span aria-hidden="true">↓</span></a>
+              <a class="ghost-button" href="tel:+390521964011" data-bind="tel"><span data-bind-text="Chiama {phone}">Chiama 0521 964011</span> <span aria-hidden="true">↗</span></a>
+            </div>
+            <p class="step-note">Interni: ricostruzione di concept. Strumenti: modelli 3D illustrativi.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <details class="journey-disclosure" id="come-e-fatto"><summary>Come è fatto il filmato.</summary><p>Il filmato d’apertura è una <b>ricostruzione fotorealistica generata con l’intelligenza artificiale</b>, non una ripresa: i fotogrammi chiave sono stati resi fotorealistici e animati con Higgsfield (GPT Image 2.5 e Seedance 2.5) partendo dalle inquadrature di un modello 3D originale del luogo vero. Facciata, insegne, ingresso e croce seguono le foto e un rilievo di <span data-bind-text="streetName">Strada Montanara</span>; l’interno e gli strumenti sono di concept. Sulla croce a LED la scritta è stata tolta. In produzione il filmato andrà sostituito con riprese reali della farmacia.</p><p>Il modello 3D da cui vengono le inquadrature è costruito con dati aperti: <a href="https://geoportale.regione.emilia-romagna.it/catalogo/dati-cartografici/cartografia-di-base/immagini/copy_of_layer-8">Ortofoto RER 2025–26</a> e <a href="https://geoportale.regione.emilia-romagna.it/catalogo/dati-cartografici/cartografia-di-base/database-topografico-regionale/immobili-e-antropizzazioni/edificato/layer-6">DBTR</a> della Regione Emilia-Romagna (<a href="https://creativecommons.org/licenses/by/4.0/deed.it">CC BY 4.0</a>), edifici © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> (<a href="https://opendatacommons.org/licenses/odbl/">ODbL</a>). <a href="./fonti.html#crediti">Fonti, crediti e licenze</a>.</p></details>
+
+    <section class="cin-services section-wrap" id="servizi" aria-labelledby="services-title">
+      <div class="services-intro" data-reveal><h2 id="services-title" data-text="servicesTitle">La salute, da vicino.</h2><p><span data-text="servicesSubtitle">Scegli un servizio: trovi prezzo, durata e come prepararti. Poi prenota online o su WhatsApp.</span> <strong>Per tutto il resto</strong> (erboristeria, noleggi, ricette, un consiglio) <a href="tel:+390521964011" data-bind="tel" data-bind-text="chiamaci al {phone}">chiamaci al 0521 964011</a> o <a href="https://wa.me/393890089249" target="_blank" rel="noopener noreferrer" data-bind="wa">scrivici su WhatsApp</a>.</p></div>
+      <div class="service-toolbar"><div class="service-filters" data-filter-controls role="group" aria-label="Filtra i servizi per categoria" hidden><!--services:filters--><button type="button" data-service-filter="Tutti" aria-pressed="true"><span>Tutti</span></button><button type="button" data-service-filter="cuore" aria-pressed="false"><svg class="pd-icon pd-icon--cuore" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20s-7.4-4.5-8.5-9.4C2.8 7.3 4.8 4.5 7.7 4.5c1.9 0 3.3 1 4.3 2.5 1-1.5 2.4-2.5 4.3-2.5 2.9 0 4.9 2.8 4.2 6.1C19.4 15.5 12 20 12 20Z"/><path class="pd-i-accent" d="M6.8 11.4h2.6l1.1-1.9 1.9 3.8 1.1-1.9h3.7"/></svg><span>Cuore</span></button><button type="button" data-service-filter="pressione" aria-pressed="false"><svg class="pd-icon pd-icon--pressione" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12.5" r="8.5"/><path d="M12 6.4v1.3M6 12.5h1.3M16.7 12.5H18"/><path class="pd-i-accent" d="m12 12.5 3.1-3.3"/><circle cx="12" cy="12.5" r="1"/></svg><span>Pressione</span></button><button type="button" data-service-filter="pelle" aria-pressed="false"><svg class="pd-icon pd-icon--pelle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 4.5c2.7 3.4 6 7 6 10.2a6 6 0 0 1-12 0c0-3.2 3.3-6.8 6-10.2Z"/><path d="M8.5 15a2.6 2.6 0 0 0 2.3 2.5"/><path class="pd-i-accent" d="M19 3v4.4M16.8 5.2h4.4"/></svg><span>Pelle</span></button><!--/services:filters--></div><a class="service-help" href="tel:+390521964011" data-bind="tel"><bdi data-bind-text="Ti aiutiamo: {phone}">Ti aiutiamo: 0521 964011</bdi> <span aria-hidden="true">↗</span></a></div>
+      <p class="sr-only" data-filter-status aria-live="polite"></p>
+      <div class="service-showcase" data-service-showcase>
+      <div class="cin-service-grid" data-services data-service-presentation="floating" data-active-filter="Tutti">
+<!--services:cards-->
+<article class="service-card service-floating service-card--ecg" data-service-key="ecg" data-category="cuore">
+    <div class="floating-heading"><h3 class="service-card__title">ECG</h3><span class="service-tariff" aria-label="Tariffa pubblicata: €20,00">€20,00</span></div>
+    <span class="service-fullname"><span class="service-glyph"><svg class="pd-icon pd-icon--ecg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4.5" width="18" height="15" rx="3.5"/><path class="pd-i-accent" d="M6.5 12.5h2l1.3-2.8 2.3 6 2.1-7.4 1.5 4.2h1.8"/></svg></span><span>Cuore</span></span>
+    <button class="service-pick" type="button" data-service-pick="ecg" aria-pressed="false" aria-label="Scegli Elettrocardiogramma per il messaggio WhatsApp"><figure class="service-card__visual service-floating-visual" data-floating-visual><noscript><img data-floating-motion data-poster="./assets/floating/ecg-poster.webp?v=20261002-4-final" data-poster-srcset="./assets/floating/ecg-poster-480.webp?v=20261002-4-final 480w, ./assets/floating/ecg-poster-640.webp?v=20261002-4-final 640w, ./assets/floating/ecg-poster.webp?v=20261002-4-final 1280w" data-src="./assets/floating/ecg-motion.webp?v=20261002-4-final" data-src-mobile="./assets/floating/ecg-motion-mobile.webp?v=20261002-4-final" src="./assets/floating/ecg-poster.webp?v=20261002-4-final" srcset="./assets/floating/ecg-poster-480.webp?v=20261002-4-final 480w, ./assets/floating/ecg-poster-640.webp?v=20261002-4-final 640w, ./assets/floating/ecg-poster.webp?v=20261002-4-final 1280w" sizes="(max-width:759.98px) 42vw, 230px" width="1280" height="1024" alt="" loading="lazy" decoding="async"></noscript></figure></button>
+    <div class="service-card__actions service-intents">
+      <a class="service-intent service-intent--details" href="./servizi/ecg/">Dettagli<span class="sr-only">: Elettrocardiogramma, prezzo, durata e domande frequenti</span><svg class="pd-icon pd-icon--freccia" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path class="pd-i-accent" d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      <a class="service-intent service-intent--book" href="https://www.farmaciaparma.it/servizi/138-ecg.html" target="_blank" rel="noopener noreferrer" aria-label="Prenota online: Elettrocardiogramma (si apre in una nuova scheda)"><svg class="pd-icon pd-icon--prenota" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 9.8h17M8 3v4M16 3v4"/><path class="pd-i-accent" d="m9.2 15.1 2 2 3.8-3.9"/></svg><span>Prenota</span></a>
+    </div>
+  </article>
+<article class="service-card service-floating service-card--teledermatologia" data-service-key="teledermatologia" data-category="pelle">
+    <div class="floating-heading"><h3 class="service-card__title service-card__title--long">Tele­dermatologia</h3><span class="service-tariff" aria-label="Tariffa pubblicata: da €35,00">da €35,00</span></div>
+    <span class="service-fullname"><span class="service-glyph"><svg class="pd-icon pd-icon--teledermatologia" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.5 8V6.5a3 3 0 0 1 3-3H8M16 3.5h1.5a3 3 0 0 1 3 3V8M20.5 16v1.5a3 3 0 0 1-3 3H16M8 20.5H6.5a3 3 0 0 1-3-3V16"/><path class="pd-i-accent" d="M11.4 8.5c1.7-.6 3.6.3 4.1 2 .6 1.8-.2 3.8-2 4.5-1.8.7-3.9 0-4.6-1.8-.8-1.9.4-4.1 2.5-4.7Z"/><circle cx="16.6" cy="16.4" r=".5"/></svg></span><span>Pelle</span></span>
+    <button class="service-pick" type="button" data-service-pick="teledermatologia" aria-pressed="false" aria-label="Scegli Teledermatologia per il messaggio WhatsApp"><figure class="service-card__visual service-floating-visual" data-floating-visual><noscript><img data-floating-motion data-poster="./assets/floating/teledermatologia-poster.webp?v=20261002-4-final" data-poster-srcset="./assets/floating/teledermatologia-poster-480.webp?v=20261002-4-final 480w, ./assets/floating/teledermatologia-poster-640.webp?v=20261002-4-final 640w, ./assets/floating/teledermatologia-poster.webp?v=20261002-4-final 1280w" data-src="./assets/floating/teledermatologia-motion.webp?v=20261002-4-final" data-src-mobile="./assets/floating/teledermatologia-motion-mobile.webp?v=20261002-4-final" src="./assets/floating/teledermatologia-poster.webp?v=20261002-4-final" srcset="./assets/floating/teledermatologia-poster-480.webp?v=20261002-4-final 480w, ./assets/floating/teledermatologia-poster-640.webp?v=20261002-4-final 640w, ./assets/floating/teledermatologia-poster.webp?v=20261002-4-final 1280w" sizes="(max-width:759.98px) 42vw, 230px" width="1280" height="1024" alt="" loading="lazy" decoding="async"></noscript></figure></button>
+    <div class="service-card__actions service-intents">
+      <a class="service-intent service-intent--details" href="./servizi/teledermatologia/">Dettagli<span class="sr-only">: Teledermatologia, prezzo, durata e domande frequenti</span><svg class="pd-icon pd-icon--freccia" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path class="pd-i-accent" d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      <a class="service-intent service-intent--book" href="https://wa.me/393890089249?text=Buongiorno%2C%20vorrei%20prenotare%20la%20teledermatologia%20alla%20Farmacia%20Ponte%20Dattaro%2C%20per%20una%20problematica%20della%20pelle%20(o%20fino%20a%20tre).%20Quali%20giorni%20avete%20disponibili%3F%20Grazie." target="_blank" rel="noopener noreferrer" aria-label="Prenota su WhatsApp: Teledermatologia (si apre in una nuova scheda)"><svg class="pd-icon pd-icon--prenota" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 9.8h17M8 3v4M16 3v4"/><path class="pd-i-accent" d="m9.2 15.1 2 2 3.8-3.9"/></svg><span>Prenota</span></a>
+    </div>
+  </article>
+<article class="service-card service-floating service-card--holter-pressorio" data-service-key="holter-pressorio" data-category="pressione">
+    <div class="floating-heading"><h3 class="service-card__title">Holter pressorio</h3><span class="service-tariff" aria-label="Tariffa pubblicata: €41,30">€41,30</span></div>
+    <span class="service-fullname"><span class="service-glyph"><svg class="pd-icon pd-icon--holter-pressorio" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="13" width="14" height="7.5" rx="3"/><path d="M7.5 15.6v2.3M10.5 15.6v2.3M13.5 15.6v2.3"/><path d="M8 13v-2.5a3 3 0 0 1 3-3h1"/><circle cx="16.5" cy="7.5" r="4.5"/><path class="pd-i-accent" d="m16.5 7.5 2.1-1.9"/></svg></span><span>Pressione</span></span>
+    <button class="service-pick" type="button" data-service-pick="holter-pressorio" aria-pressed="false" aria-label="Scegli Holter pressorio per il messaggio WhatsApp"><figure class="service-card__visual service-floating-visual" data-floating-visual><noscript><img data-floating-motion data-poster="./assets/floating/holter-pressorio-poster.webp?v=20261002-4-final" data-poster-srcset="./assets/floating/holter-pressorio-poster-480.webp?v=20261002-4-final 480w, ./assets/floating/holter-pressorio-poster-640.webp?v=20261002-4-final 640w, ./assets/floating/holter-pressorio-poster.webp?v=20261002-4-final 1280w" data-src="./assets/floating/holter-pressorio-motion.webp?v=20261002-4-final" data-src-mobile="./assets/floating/holter-pressorio-motion-mobile.webp?v=20261002-4-final" src="./assets/floating/holter-pressorio-poster.webp?v=20261002-4-final" srcset="./assets/floating/holter-pressorio-poster-480.webp?v=20261002-4-final 480w, ./assets/floating/holter-pressorio-poster-640.webp?v=20261002-4-final 640w, ./assets/floating/holter-pressorio-poster.webp?v=20261002-4-final 1280w" sizes="(max-width:759.98px) 42vw, 230px" width="1280" height="1024" alt="" loading="lazy" decoding="async"></noscript></figure></button>
+    <div class="service-card__actions service-intents">
+      <a class="service-intent service-intent--details" href="./servizi/holter-pressorio/">Dettagli<span class="sr-only">: Holter pressorio, prezzo, durata e domande frequenti</span><svg class="pd-icon pd-icon--freccia" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path class="pd-i-accent" d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      <a class="service-intent service-intent--book" href="https://www.farmaciaparma.it/servizi/133-holter-pressorio.html" target="_blank" rel="noopener noreferrer" aria-label="Prenota online: Holter pressorio (si apre in una nuova scheda)"><svg class="pd-icon pd-icon--prenota" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 9.8h17M8 3v4M16 3v4"/><path class="pd-i-accent" d="m9.2 15.1 2 2 3.8-3.9"/></svg><span>Prenota</span></a>
+    </div>
+  </article>
+<article class="service-card service-floating service-card--holter-cardiaco" data-service-key="holter-cardiaco" data-category="cuore">
+    <div class="floating-heading"><h3 class="service-card__title">Holter cardiaco</h3><span class="service-tariff" aria-label="Tariffa pubblicata: €62,00">€62,00</span></div>
+    <span class="service-fullname"><span class="service-glyph"><svg class="pd-icon pd-icon--holter-cardiaco" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="9.5" width="11" height="11" rx="3"/><path class="pd-i-accent" d="M5.9 15.3h1.5l1-2 1.6 3.8 1.1-1.8h1.3"/><path d="M11.5 9.5V9a3 3 0 0 1 3-3h.7"/><circle cx="18" cy="6" r="2.8"/><circle cx="18" cy="6" r=".5"/></svg></span><span>Cuore</span></span>
+    <button class="service-pick" type="button" data-service-pick="holter-cardiaco" aria-pressed="false" aria-label="Scegli Holter cardiaco per il messaggio WhatsApp"><figure class="service-card__visual service-floating-visual" data-floating-visual><noscript><img data-floating-motion data-poster="./assets/floating/holter-cardiaco-poster.webp?v=20261002-4-final" data-poster-srcset="./assets/floating/holter-cardiaco-poster-480.webp?v=20261002-4-final 480w, ./assets/floating/holter-cardiaco-poster-640.webp?v=20261002-4-final 640w, ./assets/floating/holter-cardiaco-poster.webp?v=20261002-4-final 1280w" data-src="./assets/floating/holter-cardiaco-motion.webp?v=20261002-4-final" data-src-mobile="./assets/floating/holter-cardiaco-motion-mobile.webp?v=20261002-4-final" src="./assets/floating/holter-cardiaco-poster.webp?v=20261002-4-final" srcset="./assets/floating/holter-cardiaco-poster-480.webp?v=20261002-4-final 480w, ./assets/floating/holter-cardiaco-poster-640.webp?v=20261002-4-final 640w, ./assets/floating/holter-cardiaco-poster.webp?v=20261002-4-final 1280w" sizes="(max-width:759.98px) 42vw, 230px" width="1280" height="1024" alt="" loading="lazy" decoding="async"></noscript></figure></button>
+    <div class="service-card__actions service-intents">
+      <a class="service-intent service-intent--details" href="./servizi/holter-cardiaco/">Dettagli<span class="sr-only">: Holter cardiaco, prezzo, durata e domande frequenti</span><svg class="pd-icon pd-icon--freccia" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path class="pd-i-accent" d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      <a class="service-intent service-intent--book" href="https://www.farmaciaparma.it/servizi/132-holter-cardiaco-o-ecg-dinamico.html" target="_blank" rel="noopener noreferrer" aria-label="Prenota online: Holter cardiaco (si apre in una nuova scheda)"><svg class="pd-icon pd-icon--prenota" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 9.8h17M8 3v4M16 3v4"/><path class="pd-i-accent" d="m9.2 15.1 2 2 3.8-3.9"/></svg><span>Prenota</span></a>
+    </div>
+  </article>
+<article class="service-card service-floating service-card--altri-servizi" data-service-key="altri-servizi" data-category="Altro">
+    <div class="floating-heading"><h3 class="service-card__title">Altri servizi</h3></div>
+    <span class="service-fullname">Erboristeria, noleggi, consigli</span>
+    <span class="service-tariff service-tariff--ask">Chiamaci o scrivici</span>
+    <button class="service-pick" type="button" data-service-pick="altri-servizi" aria-pressed="false" aria-label="Scegli: altri servizi, chiamaci o scrivici"><figure class="service-card__visual service-floating-visual"><noscript><img src="./assets/v7/altri-servizi-poster.webp" width="1280" height="1024" alt="" loading="lazy" decoding="async"></noscript></figure></button>
+    <div class="service-card__actions service-intents">
+      <a class="service-intent service-intent--details" href="tel:+390521964011" aria-label="Chiama la farmacia al 0521 964011">Chiama<svg class="pd-icon pd-icon--chiama" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8.4 3.8 6 4.2C4.7 4.4 3.8 5.6 4 6.9c.9 6.6 6.5 12.2 13.1 13.1 1.3.2 2.5-.7 2.7-2l.4-2.4c.1-.7-.3-1.4-1-1.6l-2.6-.9c-.6-.2-1.2 0-1.6.4l-1 1.1a10.6 10.6 0 0 1-4.6-4.6l1.1-1c.4-.4.6-1 .4-1.6L10 4.8c-.2-.7-.9-1.1-1.6-1Z"/></svg></a>
+      <a class="service-intent service-intent--book service-intent--wa" href="https://wa.me/393890089249?text=Buongiorno%2C%20vorrei%20un%E2%80%99informazione%20dalla%20Farmacia%20Ponte%20Dattaro%20su%3A%20" target="_blank" rel="noopener noreferrer" aria-label="Scrivi alla farmacia su WhatsApp (si apre in una nuova scheda)"><svg class="pd-icon pd-icon--whatsapp" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3.6a8.3 8.3 0 0 0-7.2 12.5L3.6 20.4l4.4-1.2A8.3 8.3 0 1 0 12 3.6Z"/><path class="pd-i-accent" d="M9.6 8.6c-.5 1.2-.1 2.8 1.2 4.2 1.4 1.4 3 1.8 4.2 1.3l.5-1.3-1.7-.9-.8.8a4.4 4.4 0 0 1-1.7-1.7l.8-.8-.9-1.7Z"/></svg><span>Scrivici</span></a>
+    </div>
+  </article>
+<!--/services:cards-->
+      </div>
+        <div class="service-cta" data-service-cta>
+          <p class="service-cta-copy"><strong data-service-cta-title>Scegli un servizio, poi scrivici.</strong><span>Ti rispondiamo su WhatsApp con giorni e orari disponibili.</span></p>
+          <a class="service-cta-button" data-service-cta-link data-bind="wa" data-wa="generic" href="https://wa.me/393890089249?text=Buongiorno%2C%20vorrei%20informazioni%20sui%20servizi%20della%20Farmacia%20Ponte%20Dattaro.%20Grazie." target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.3 21.7l4.8-1.3A9.8 9.8 0 1 0 12 2.2Zm4.9 12.2c-.3-.1-1.6-.8-1.8-.9-.3-.1-.4-.1-.6.1l-.8 1c-.2.2-.3.2-.6.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-2c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.8.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.6.5-.1 1.6-.6 1.8-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.6-.3Z"/></svg><span data-service-cta-label>Prenota su WhatsApp</span></a>
+        </div>
+      </div>
+      <div class="service-motion-bar"><p class="service-visual-note"><span data-text="servicePriceNote">Conferma prezzo e disponibilità quando prenoti.</span> Miniature 3D illustrative.</p><button type="button" data-service-motion-toggle hidden aria-pressed="false">Ferma miniature</button></div>
+    </section>
+
+    <!-- V11 modules (content/site.json → src/modules/*.js). Team is core: the people of the pharmacy. -->
+    <section class="pd-team section-wrap" id="team" data-module="team" aria-labelledby="team-title"></section>
+
+    <section class="material-section cross-signature" id="materia" data-requires-module="signature" aria-labelledby="material-title">
+      <div class="material-inner">
+        <div class="material-copy" data-reveal><h2 id="material-title">Un segno<br>di vicinanza.</h2><p data-text-lines="signatureText" data-text-optional>Da Parma alla tua salute.<br>La Farmacia Ponte Dattaro è qui per te.</p><a class="cross-whatsapp" href="https://wa.me/393890089249" target="_blank" rel="noopener noreferrer" data-bind="wa">Scrivici su WhatsApp <span aria-hidden="true">↗</span></a><p id="cross-study-status" class="study-status" aria-live="polite"></p></div>
+        <figure class="material-visual"><div id="cross-study" class="sculpture-stage" data-mode="static" aria-hidden="true"><img class="sculpture-poster" src="./assets/cross-logo-poster-web.webp" width="900" height="900" alt="" loading="lazy"><div id="cross-webgl" class="cross-webgl" data-scene-theme="dark" hidden></div></div><figcaption class="material-caption"><span>Vetro verde · Bianco opale · Ottone</span><button id="cross-3d-toggle" type="button" aria-pressed="false" aria-label="Ferma l’animazione della croce 3D" hidden>Ⅱ</button></figcaption></figure>
+      </div>
+    </section>
+
+    <section class="story-section section-wrap" id="farmacia" data-requires-module="story" aria-labelledby="story-title">
+      <figure class="history-photo"><img src="./assets/history/sede-strada-1050.webp?v=v11" srcset="./assets/history/sede-strada-700.webp?v=v11 700w, ./assets/history/sede-strada-1050.webp?v=v11 1050w, ./assets/history/sede-strada.webp?v=v11 1600w" sizes="(min-width:1440px) 680px, (min-width:760px) 47vw, calc(100vw - 40px)" width="1600" height="616" alt="La sede della Farmacia Ponte Dattaro in Strada Montanara, con le insegne Erboristeria e Farmacia e la croce verde." data-bind-alt="storyPhoto" loading="lazy" decoding="async"><figcaption data-bind-text="storyPhotoCaption">La sede di Strada Montanara · ricostruzione fotorealistica del concept</figcaption></figure>
+      <div class="story-intro" data-reveal><p class="story-kicker" data-text="storyKicker" data-text-optional>Dal 1966</p><h2 id="story-title" data-text-title="story">Una storia <span>di cura.</span></h2><p data-text="storyLead" data-text-optional>A Montanara, il consiglio giusto comincia dall’ascolto.</p><ol class="history-dates" aria-label="Le tappe della farmacia" data-text-dates="storyDates" data-text-optional><li><strong>1966</strong><span>L’inizio</span></li><li><strong>1988</strong><span>La sede attuale</span></li><li><strong>1999</strong><span>Il dott. Bruschi</span></li></ol><details class="history-details"><summary>La nostra storia <span aria-hidden="true">+</span></summary><p data-text="storyBody" data-text-optional>La Farmacia Ponte Dattaro nasce nel 1966 a Parma. Dal 1988 ci trovi in Strada Montanara, 23/b. Il dott. Enrico Bruschi guida la farmacia dal marzo 1999. Sette farmacisti e due impiegate accompagnano ogni giorno la comunità di Parma.</p><a class="text-button" href="https://www.farmaciaparma.it/chisiam2.html" data-bind="story">Leggi sul sito ufficiale <span aria-hidden="true">↗</span></a></details></div>
+    </section>
+
+    <section class="pd-reviews section-wrap" id="recensioni" data-module="reviews" aria-labelledby="reviews-title"></section>
+    <section class="pd-promo section-wrap" id="promo" data-module="promo" aria-labelledby="promo-title"></section>
+    <section class="pd-ordina section-wrap" id="ordina" data-module="ordina" aria-labelledby="ordina-title"></section>
+    <section class="pd-ricetta section-wrap" id="ricetta" data-module="ricetta" aria-labelledby="ricetta-title"></section>
+
+    <section class="contact-section section-wrap" id="contatti" aria-labelledby="contact-title">
+      <div class="contact-main"><h2 id="contact-title">Parliamone.</h2><a class="contact-address" href="https://www.google.com/maps/search/?api=1&amp;query=Farmacia%20Ponte%20Dattaro%20Strada%20Montanara%2023%2Fb%20Parma" data-bind="maps"><bdi data-bind-text="address">Strada Montanara, 23/b · Parma</bdi> <span aria-hidden="true">↗</span></a><div class="contact-inline"><a href="tel:+390521964011" data-bind="tel" data-bind-text="phone">0521 964011</a><a href="https://wa.me/393890089249" target="_blank" rel="noopener noreferrer" aria-label="Scrivi su WhatsApp al 389 008 9249" data-bind="wa" data-bind-aria="Scrivi su WhatsApp al {whatsapp}" data-bind-text="WhatsApp {whatsapp} ↗">WhatsApp 389 008 9249 ↗</a><a href="mailto:pontedattarofarmacia@gmail.com" data-bind="mail" data-bind-text="email">pontedattarofarmacia@gmail.com</a></div><p class="contact-hours" data-hours data-bind-text="hoursLine">Lun–ven 08:30–19:30 · Sab 08:30–13:00 / 15:30–19:30. Domenica e festivi: verifica i turni.</p></div>
+      <form class="whatsapp-request" data-whatsapp-request><h3>Un messaggio, ed è semplice.</h3><div class="request-fields"><label for="request-service">Vorrei informazioni su<select id="request-service" name="servizio" data-bind-list="serviceOptions"><option value="">Informazioni generali</option><option value="ecg">Elettrocardiogramma</option><option value="teledermatologia">Teledermatologia</option><option value="holter-pressorio">Holter pressorio</option><option value="holter-cardiaco">Holter cardiaco</option></select></label><label for="request-date">Giorno (facoltativo)<input id="request-date" type="date" name="giorno"></label></div><a class="request-open" data-whatsapp-open data-bind="wa" data-wa="info" href="https://wa.me/393890089249?text=Buongiorno%2C%20vorrei%20informazioni%20dalla%20Farmacia%20Ponte%20Dattaro.%20Grazie." target="_blank" rel="noopener noreferrer">Apri WhatsApp <span aria-hidden="true">↗</span></a><p data-whatsapp-preview>La farmacia ti risponderà su WhatsApp.</p></form>
+      <div class="contact-info" id="domande"><details class="useful-details"><summary>Informazioni utili e approfondimenti <span aria-hidden="true">+</span></summary><div class="useful-content"><div><h3>Prima di prenotare</h3><p>Per orari aggiornati, noleggi, preparazione e modalità dei servizi, chiama la farmacia o scrivici su WhatsApp. La richiesta viene confermata dal team.</p><a href="https://www.farmaciaparma.it/prenota2.html" data-bind="booking">Prenotazioni sul sito ufficiale ↗</a></div><div data-bind-list="usefulLinks" data-bind-title="Dal sito della farmacia"><h3>Dal sito della farmacia</h3><a href="https://www.farmaciaparma.it/news-blog/181-estate-e-pelle-come-proteggerla-dal-sole-e-dal-caldo.html">Estate e pelle: come proteggerla dal sole e dal caldo ↗</a><a href="https://www.farmaciaparma.it/news-blog/180-pressione-bassa-e-caldo-sintomi-consigli-e-rimedi-utili.html">Pressione bassa e caldo: sintomi, consigli e rimedi utili ↗</a><a href="https://www.farmaciaparma.it/news-blog/179-come-affrontare-il-caldo-estivo-7-consigli-utili-per-stare-bene.html">Come affrontare il caldo estivo: 7 consigli utili per stare bene ↗</a><a href="https://www.farmaciaparma.it/news-blog.html">Tutti gli approfondimenti ↗</a></div></div></details></div>
+    </section>
+  </main>
+  <footer class="cin-footer"><div class="footer-middle"><div class="footer-brand"><img src="./assets/v7/icons/icon-192.png" width="56" height="56" alt="" loading="lazy" decoding="async"><div><strong data-bind-text="name">Farmacia Ponte Dattaro</strong><p><span data-bind-text="owner" data-bind-suffix=" · ">del dott. Enrico Bruschi · </span><span data-bind-text="street">Strada Montanara, 23/b</span><br><span data-bind-text="postalCity">43124 Parma</span><span data-bind-text="vat" data-bind-prefix=" · P.IVA "> · P.IVA 02072810340</span></p></div></div><div class="footer-contact"><a href="tel:+390521964011" data-bind="tel" data-bind-text="phone">0521 964011</a><a href="https://wa.me/393890089249" target="_blank" rel="noopener noreferrer" data-bind="wa" data-bind-text="WhatsApp {whatsapp}">WhatsApp 389 008 9249</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Farmacia%20Ponte%20Dattaro%20Strada%20Montanara%2023%2Fb%20Parma" data-bind="maps">Indicazioni stradali</a></div><div class="footer-links"><a href="https://www.iubenda.com/privacy-policy/50924972" data-bind="privacy">Privacy del sito ufficiale ↗</a><a href="https://www.iubenda.com/privacy-policy/50924972/cookie-policy" data-bind="cookies">Cookie del sito ufficiale ↗</a><a href="#main">Torna all’inizio ↑</a></div></div><div class="footer-bottom"><span>Anteprima di design. Prenotazioni e richieste proseguono sui canali della farmacia.</span><a href="./fonti.html">Fonti, crediti e licenze</a><a href="./sistema.html">Documento di sistema</a></div></footer>
+  <div data-module="booking"></div>
+  <div data-module="mobileBar"></div>
+</body>
+</html>
