@@ -1,6 +1,6 @@
 {
-  "version": "v11d",
-  "hls": "hls/v11d",
+  "version": "v11e",
+  "hls": "hls/v11e",
   "hevc": true,
   "avif": true,
   "seconds": 18.433333,
