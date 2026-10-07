@@ -1,0 +1,15 @@
+{
+  "slug": "bertani-verticale",
+  "model": "kling3_0",
+  "jobId": "e0e9a6a1-7490-4948-a33d-ce53c169108f",
+  "resultUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuGKr1WcAu5dZdwhDu44FBBUt8/hf_20261007_173919_e0e9a6a1-7490-4948-a33d-ce53c169108f.mp4",
+  "prompt": "Subtle, realistic 5-second clip, locked static camera, vertical 9:16: the pharmacist keeps looking at the camera, breathes naturally, gives a slight warm smile and a small nod, blinks once; his hands rest on the counter; his face, glasses and beard stay exactly the same. The background shelves stay completely still and empty: absolutely no other people, nobody walks by, nobody enters the frame. No text, no camera movement.",
+  "startImage": "bertani/ritratto-verticale.webp (convertita in PNG 1072x1920)",
+  "duration": 5,
+  "pingpong": true,
+  "credits": 10,
+  "createdAt": "2026-10-07T17:39:19Z",
+  "output": { "video": "bertani-verticale.mp4", "poster": "bertani-verticale.webp", "width": 716, "height": 1284, "seconds": 4.67 },
+  "source": "_lavoro-v12/media/r3/bertani-verticale-src.mp4",
+  "note": "Dal fotogramma ~60 una persona entrava nello sfondo a destra (come nel primo tentativo del loop 16:9): tenuti i primi 56 fotogrammi puliti (2,3 s: respira, sguardo fermo) in ping-pong. Usato solo sotto i 768 px (telefono), sopra il ritratto verticale."
+}
