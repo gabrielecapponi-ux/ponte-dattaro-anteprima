@@ -1,0 +1,16 @@
+{
+  "slug": "teledermatologia-wide",
+  "model": "kling3_0",
+  "jobId": "f9e7752c-905d-4040-aa23-492db77d4010",
+  "credits": 10,
+  "duration": 5,
+  "pingpong": false,
+  "prompt": "Subtle, realistic 5-second clip, locked camera: the pharmacist moves the dermatoscope gently along the patient's forearm and glances at her, the patient stays still and breathes, faces unchanged, natural daylight, no text, no camera shake.",
+  "startImage": "public/assets/v12/foto/servizio-teledermatologia-wide.webp",
+  "file": "assets/v12/loops/teledermatologia-wide.mp4",
+  "poster": "assets/v12/loops/teledermatologia-wide.webp",
+  "bytes": 503777,
+  "posterBytes": 62990,
+  "encode": "libx264 crf22 slow yuv420p faststart, no audio",
+  "created": "2026-10-07"
+}

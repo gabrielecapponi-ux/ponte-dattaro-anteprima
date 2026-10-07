@@ -1,0 +1,19 @@
+{
+  "slug": "bertani",
+  "model": "kling3_0",
+  "jobId": "fd0e328a-9641-4f83-8f80-fd81560649d3",
+  "resultUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuGKr1WcAu5dZdwhDu44FBBUt8/hf_20261007_160710_fd0e328a-9641-4f83-8f80-fd81560649d3.mp4",
+  "prompt": "Subtle, realistic 5-second clip, locked static camera: the pharmacist keeps looking at the camera, breathes naturally, gives a slight warm smile and a small nod, blinks once; his face, glasses and beard stay exactly the same. The background shelves stay completely still and empty: absolutely no other people, nobody walks by, nobody enters the frame. No text, no camera movement.",
+  "startImage": "bertani/ritratto.webp (convertita in PNG 1920x1072)",
+  "duration": 5,
+  "pingpong": false,
+  "credits": 20,
+  "createdAt": "2026-10-07T16:07:10Z",
+  "output": {
+    "video": "bertani.mp4",
+    "poster": "bertani.webp",
+    "width": 1280,
+    "height": 714
+  },
+  "note": "Secondo tentativo kling3_0 (job 27491867-504f-4f2f-8cda-11d3126fb211, 10 crediti, scartato: una persona attraversava lo sfondo da 3,5 s). Volto, occhiali e barba stabili; sorriso e cenno del capo presenti."
+}

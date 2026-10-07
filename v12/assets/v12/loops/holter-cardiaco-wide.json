@@ -1,0 +1,20 @@
+{
+  "slug": "holter-cardiaco-wide",
+  "model": "kling3_0",
+  "jobId": "d363319e-aa1a-4594-a8f3-d8701ff122c5",
+  "credits": 10,
+  "pingpong": false,
+  "duration": 5,
+  "prompt": "Subtle, realistic 5-second clip, locked camera: the pharmacist clips the small Holter recorder to the patient's belt and tidies the cables, the elderly patient listens and nods, faces unchanged, natural daylight, no text, no camera shake.",
+  "startImage": "public/assets/v12/foto/servizio-holter-cardiaco-wide.webp",
+  "file": "assets/v12/loops/holter-cardiaco-wide.mp4",
+  "poster": "assets/v12/loops/holter-cardiaco-wide.webp",
+  "bytes": 708583,
+  "posterBytes": 64294,
+  "source": "_lavoro-v12/media/r2/loops/holter-cardiaco-wide-src.mp4",
+  "contactSheetOk": true,
+  "generatedAt": "2026-10-07T16:04:22Z",
+  "width": 1280,
+  "height": 714,
+  "frames": 121
+}

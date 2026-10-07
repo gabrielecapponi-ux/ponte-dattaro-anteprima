@@ -1,0 +1,16 @@
+{
+  "model": "nano_banana_pro",
+  "jobId": "d241b38b-7660-4810-8962-80248e512286",
+  "resultUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuGKr1WcAu5dZdwhDu44FBBUt8/hf_20261007_160017_d241b38b-7660-4810-8962-80248e512286.png",
+  "prompt": "Sharp editorial photograph of the same person as the reference image (identical face, short grey hair, grey beard, round thin-rimmed glasses, white pharmacist coat with green piped lapels, light blue shirt, dark green tie). Vertical 9:16 half-length portrait of him standing behind the wooden counter of his modern Italian pharmacy, hands resting lightly on the counter, soft slight smile, looking straight into the camera. Composition: his head placed in the upper third of the frame, generous clean negative space in the lower half of the frame (counter surface and softly blurred floor area) left free for text. Warm natural daylight from a large window, wooden shelves with dark green back panels and product boxes softly out of focus in the background, shallow depth of field, 85mm lens look. True-to-life colours, no film grain, no haze, no CGI look, no readable text, no logos.",
+  "references": [
+    "/Users/gabrielecapponi/.codex/.chatgpt-projects/g-p-6a9d9d5139a48191b2dda6313b5cbc69/outputs/farmacia-redesign-2026-10-01/prototypes-v12-storia/immagini/web/team/farmacista-senior.webp"
+  ],
+  "credits": 2,
+  "aspect": "9:16",
+  "resolution": "2k",
+  "output": [
+    1072,
+    1920
+  ]
+}

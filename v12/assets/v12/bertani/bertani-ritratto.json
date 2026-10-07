@@ -1,0 +1,12 @@
+{
+  "model": "nano_banana_pro",
+  "jobId": "6e9fafa2-c660-4392-a955-87a35b1a0239",
+  "resultUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuGKr1WcAu5dZdwhDu44FBBUt8/hf_20261007_160017_6e9fafa2-c660-4392-a955-87a35b1a0239.png",
+  "prompt": "Sharp editorial photograph, cinematic three-quarter portrait of the same person as the reference image (identical face, short grey beard, thin wire-rimmed glasses, grey hair, white pharmacist coat with green trim, light blue shirt, dark green tie). He stands behind the light wooden counter of his modern pharmacy, slight warm smile, looking straight into the camera, both hands resting on the counter. Warm natural side light streaming in from the shop windows; shelves full of medicine boxes, dark green shelving and glowing pendant lamps softly blurred in the background. Composition: the man occupies the right half of the 16:9 frame, the left half remains open and uncluttered with only soft blurred interior for text space. True-to-life colours, no film grain, no haze, no CGI look, no readable text, no logos.",
+  "references": [
+    "/Users/gabrielecapponi/.codex/.chatgpt-projects/g-p-6a9d9d5139a48191b2dda6313b5cbc69/outputs/farmacia-redesign-2026-10-01/prototypes-v12-storia/immagini/web/team/farmacista-senior.webp"
+  ],
+  "credits": 2,
+  "aspect": "16:9",
+  "resolution": "2k"
+}

@@ -1,0 +1,15 @@
+{
+  "model": "nano_banana_pro",
+  "jobId": "56ac35bd-bbda-4cbd-b28a-ec2852cb8428",
+  "resultUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuGKr1WcAu5dZdwhDu44FBBUt8/hf_20261007_160134_56ac35bd-bbda-4cbd-b28a-ec2852cb8428.png",
+  "prompt": "Sharp editorial photograph, exactly the same viewpoint, camera position, focal length, perspective, framing and building facade as the reference image, matched to the millimetre so the two photographs overlap perfectly when superimposed: a ground-floor pharmacy in a 1980s Italian red-brick apartment block with travertine cladding, balconies above, the same street seen from the same angle. The scene is today, decades later: no cardboard boxes, no delivery van, no old cars; the pavement is clean; brand-new crisp white sun awnings over the shop windows in the same positions; ONE single long backlit white sign panel above the entrance, exactly where the old black sign was, carrying the red capital text \"FARMACIA PONTE DATTARO\" on one line; a modern illuminated green LED pharmacy cross, switched on and glowing, mounted on the facade to the right of the sign in the same position as the reference, not overlapping the sign; one modern compact hatchback car parked at the kerb with no brand badges; the plane trees much taller and fuller than in the reference; the shop windows bright, tidy and contemporary. Crisp clear morning sunlight, true-to-life colours, no film grain, no haze, no CGI look, no logos, no other readable text anywhere. Photorealistic, 16:9.",
+  "references": [
+    "/Users/gabrielecapponi/.codex/.chatgpt-projects/g-p-6a9d9d5139a48191b2dda6313b5cbc69/outputs/farmacia-redesign-2026-10-01/prototypes-v12-cinema/public/assets/v12/storia/1988.webp"
+  ],
+  "credits": 2,
+  "creditsTotalSpent": 4,
+  "aspect": "16:9",
+  "resolution": "2k",
+  "attempts": 2,
+  "discardedJobId": "ff4891a5-c0ca-4182-bb0c-d60eb6840472"
+}

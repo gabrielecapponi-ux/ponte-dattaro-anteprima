@@ -1,0 +1,22 @@
+{
+  "slug": "holter-pressorio-wide",
+  "model": "kling3_0",
+  "jobId": "c1e51938-5924-4952-9108-cfa9bc2eb331",
+  "discardedJobId": "13a4bc3f-40fe-40c9-b748-3f09e6b474f1",
+  "prompt": "Subtle, realistic 5-second clip, locked camera: the pharmacist finishes fastening the blood-pressure cuff and gently checks the small monitor, the patient looks at her and smiles slightly, faces unchanged, natural daylight, no text, no camera shake. Background and shelves stay exactly as they are, no new objects or boxes appear, no logos, no labels.",
+  "startImage": "public/assets/v12/foto/servizio-holter-pressorio-wide.webp",
+  "pingpong": false,
+  "duration": 5.04,
+  "width": 1280,
+  "height": 714,
+  "frames": 121,
+  "fps": 24,
+  "file": "holter-pressorio-wide.mp4",
+  "poster": "holter-pressorio-wide.webp",
+  "bytes": 789356,
+  "posterBytes": 72348,
+  "encode": "libx264 crf22 preset slow yuv420p faststart, no audio",
+  "creditsEstimated": 20,
+  "attempts": 2,
+  "generatedAt": "2026-10-07"
+}
