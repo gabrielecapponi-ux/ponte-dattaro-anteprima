@@ -1,9 +1,11 @@
 {
-  "version": "v11f",
-  "hls": "hls/v11f",
+  "version": "v11h",
+  "hls": "hls/v11h",
   "hevc": true,
   "avif": true,
-  "seconds": 12.966667,
-  "frames": 389,
+  "desk": true,
+  "fps": 60,
+  "seconds": 12.916667,
+  "frames": 775,
   "note": "Scritto da encode-site.sh: la pagina legge da qui la versione di tutti i file del filmato (vite.config.js filmManifest)."
 }
