@@ -1,0 +1,17 @@
+{
+  "model": "gpt_image_2_5",
+  "jobId": "287dbecb-617a-4a59-8dd5-fea4bbdee2d1",
+  "resultUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuGKr1WcAu5dZdwhDu44FBBUt8/hf_20261007_134011_287dbecb-617a-4a59-8dd5-fea4bbdee2d1.png",
+  "prompt": "Parma, Italy, 1966. Frontal view of a small neighbourhood pharmacy shopfront on an Italian street: a sign reading FARMACIA in metal letters above the window and a simple pharmacy cross, a Fiat 600 and a Vespa parked at the kerb, two passers-by in 1960s clothing seen from the side or from behind. Sharp, clean black-and-white documentary photograph, morning light, no film grain, no scratches, no haze, no vignetting, no CGI look, no readable text other than FARMACIA, no logos.",
+  "references": [],
+  "credits": 2.75,
+  "source": {
+    "width": 2688,
+    "height": 1520
+  },
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "crop": "center fit 16:9"
+  }
+}

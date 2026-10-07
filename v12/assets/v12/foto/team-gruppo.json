@@ -1,0 +1,15 @@
+{
+  "slug": "team-gruppo",
+  "model": "nano_banana_pro",
+  "jobId": "d3c758ec-afc8-4d0d-bbea-c99f904ee262",
+  "resultUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuGKr1WcAu5dZdwhDu44FBBUt8/hf_20261007_145803_d3c758ec-afc8-4d0d-bbea-c99f904ee262.png",
+  "prompt": "Group photograph of five pharmacy staff members, the same five people as the five reference portraits (same faces, same hair), all wearing identical plain white coats with thin green piping over plain light shirts, open collars, absolutely no tie and no necktie on anyone, standing relaxed and smiling naturally side by side behind a light oak counter in a bright modern pharmacy with light oak shelves and dark green shelf backs, pendant globe lamps, big windows with plane trees outside. Order from left to right: the man with short grey beard and glasses at the far left edge, the woman with brown hair tied back, the woman with brown wavy hair at the centre, the man with curly hair and beard, and the woman with short blond bob and glasses at the far right. Nobody wears a tie, nobody stands in a boss pose, everyone at the same height, equal importance, hands resting on the counter. Wide 3:2 horizontal frame at eye level, plenty of room on both sides and above the heads. Sharp documentary photograph, true-to-life colours, natural daylight, no film grain, no haze, no bloom, no vignetting, no CGI look, no readable text, no logos.",
+  "references": [
+    "prototypes-v12-storia/immagini/web/team/{farmacista-senior,farmacista-cuore,farmacista-pelle,farmacista-erbe,banco}.webp"
+  ],
+  "credits": 2,
+  "aspect_ratio": "3:2",
+  "resolution": "2k",
+  "createdAt": "2026-10-07T14:58:03.077483Z",
+  "note": "Rigenerata il 7/10 (secondo tentativo) senza la parola «owner» e senza cravatta: il farmacista con barba grigia sta all’estremità sinistra, nessuno al centro in posa da titolare"
+}

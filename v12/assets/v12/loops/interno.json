@@ -1,0 +1,11 @@
+{
+  "slug": "interno",
+  "model": "kling3_0",
+  "jobId": "40137b9b-2174-4cd2-b269-ce727ac69b33",
+  "resultUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuGKr1WcAu5dZdwhDu44FBBUt8/hf_20261007_134015_40137b9b-2174-4cd2-b269-ce727ac69b33.mp4",
+  "prompt": "Realistic 5-second clip: slow smooth dolly forward from the entrance toward the wooden counter of the empty pharmacy, pendant lamps steady, sunlight through the windows, no people, no text, no camera shake.",
+  "startImage": "prototypes-v12-storia/immagini/interno-ampio.png",
+  "pingpong": true,
+  "credits": 10,
+  "creditsNote": "stima: kling3_0 std 5s, ~10 crediti"
+}

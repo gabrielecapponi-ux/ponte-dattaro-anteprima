@@ -1,0 +1,18 @@
+{
+  "slug": "croce-sera",
+  "model": "kling3_0",
+  "jobId": "29420047-e75c-4637-abd9-d16cc8f0e1d3",
+  "resultUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuGKr1WcAu5dZdwhDu44FBBUt8/hf_20261007_145358_29420047-e75c-4637-abd9-d16cc8f0e1d3.mp4",
+  "prompt": "Subtle, realistic 5-second clip at blue hour, locked camera, no camera movement: the green LED pharmacy cross on the pole glows and pulses gently, its red LED letters stay steady and readable, the street lamps and the lit shop windows stay on, the leaves of the plane trees move very slightly in a light breeze, nothing else moves, no people, no cars, no text changes, no flicker artifacts.",
+  "startImage": "facciata-sera.webp (la facciata al crepuscolo, nano_banana_pro dal riferimento sede-strada)",
+  "duration": 5,
+  "pingpong": true,
+  "credits": 10,
+  "createdAt": "2026-10-07T14:53:58.670979Z",
+  "output": {
+    "video": "croce-sera.mp4",
+    "poster": "croce-sera.webp (la facciata al crepuscolo, 1920)",
+    "width": 1280,
+    "height": 720
+  }
+}

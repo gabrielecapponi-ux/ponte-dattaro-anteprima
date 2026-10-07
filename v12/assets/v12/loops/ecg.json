@@ -1,0 +1,13 @@
+{
+  "slug": "ecg",
+  "model": "kling3_0",
+  "mode": "std",
+  "jobId": "29a1a6c3-6159-4513-84cb-03e4a9b5f282",
+  "resultUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuGKr1WcAu5dZdwhDu44FBBUt8/hf_20261007_134014_29a1a6c3-6159-4513-84cb-03e4a9b5f282.mp4",
+  "prompt": "Subtle, realistic 5-second clip, static camera: the pharmacist gently presses the last ECG electrode onto the patient's chest and glances at the monitor, the patient breathes calmly, the ECG trace on the monitor scrolls slowly, natural daylight, faces stay the same, no text, no camera shake.",
+  "startImage": "prototypes-v12-storia/immagini/servizio-ecg.png",
+  "duration": 5,
+  "pingpong": false,
+  "credits": 10,
+  "output": { "video": "ecg.mp4", "poster": "ecg.webp", "width": 860, "height": 1068, "fps": 24, "bytes": 500660 }
+}

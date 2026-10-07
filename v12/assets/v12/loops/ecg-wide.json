@@ -1,0 +1,19 @@
+{
+  "slug": "ecg-wide",
+  "model": "kling3_0",
+  "jobId": "6f1809a7-305e-4173-8b50-e9efeb07183b",
+  "resultUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuGKr1WcAu5dZdwhDu44FBBUt8/hf_20261007_145759_6f1809a7-305e-4173-8b50-e9efeb07183b.mp4",
+  "prompt": "Subtle, realistic 5-second clip, locked camera, no camera movement: the pharmacist gently presses the last ECG electrode onto the patient's chest and glances at the monitor, the patient breathes calmly and keeps still, the ECG trace on the small monitor scrolls slowly, natural daylight, faces stay exactly the same, no text, no camera shake, no flicker.",
+  "startImage": "foto/servizio-ecg-wide (16:9, nano_banana_pro dalla verticale 2k)",
+  "duration": 5,
+  "pingpong": false,
+  "credits": 10,
+  "createdAt": "2026-10-07T14:57:59.674714Z",
+  "output": {
+    "video": "ecg-wide.mp4",
+    "poster": "foto/servizio-ecg-wide.webp",
+    "width": 1280,
+    "height": 720
+  },
+  "note": "Loop dell’ECG per lo stage dei servizi da 768 px in su; sotto resta ecg.mp4 (860 px, dalla verticale)"
+}

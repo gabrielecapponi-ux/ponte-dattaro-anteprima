@@ -1,0 +1,21 @@
+{
+  "slug": "1988",
+  "model": "nano_banana_pro",
+  "jobId": "1ffed0a0-3235-4275-85ec-4fd457ba080c",
+  "resultUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuGKr1WcAu5dZdwhDu44FBBUt8/hf_20261007_134133_1ffed0a0-3235-4275-85ec-4fd457ba080c.png",
+  "prompt": "Sharp documentary colour photograph, 16:9, the same street and the same shopfront as the reference image (brick apartment block with travertine-clad ground floor, FARMACIA shop with large glass windows, plane trees along the sidewalk, Parma, Italy) but photographed in 1988 on moving-in day of the new pharmacy premises. The black shop sign with the single white word FARMACIA is mounted high on the travertine fascia and is fully visible and unobstructed; the brand-new cream canvas awning is mounted below the sign, over the window. Stacks of plain brown cardboard boxes without any writing on the sidewalk in front of the open shop door, the green pharmacy cross sign still switched off and dark, a plain white 1980s panel van with no badges and a small boxy white 1980s Fiat Uno hatchback parked at the kerb, leafy plane trees in summer, warm late-afternoon sunlight, period details (no vending machine, no LED signs, old street lamps), no recognisable people in the foreground, the only readable word in the whole image is FARMACIA, no logos, true-to-life colours, no film grain, no haze, no vignetting, no sepia, no CGI look",
+  "references": [
+    "/Users/gabrielecapponi/.codex/.chatgpt-projects/g-p-6a9d9d5139a48191b2dda6313b5cbc69/outputs/farmacia-redesign-2026-10-01/prototypes-v12-storia/immagini/web/sede-strada-1600.webp"
+  ],
+  "credits": 2,
+  "creditsTotalSpent": 4,
+  "attempt": 1,
+  "generations": 2,
+  "discardedJobId": "cdf4f878-15a1-42b0-8e6a-d74420481b24",
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "format": "webp",
+    "quality": 84
+  }
+}

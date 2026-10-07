@@ -1,0 +1,15 @@
+{
+  "slug": "servizio-holter-cardiaco-wide",
+  "model": "nano_banana_pro",
+  "jobId": "089e00d3-e2b5-4822-96f5-a190e151b68a",
+  "resultUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuGKr1WcAu5dZdwhDu44FBBUt8/hf_20261007_145357_089e00d3-e2b5-4822-96f5-a190e151b68a.png",
+  "prompt": "Exactly the same people, the same faces, the same clothes, the same pose, the same room and the same light as the reference image, but reframed as a wide 16:9 horizontal eye-level frame: the camera steps back and shows more of the room on both sides, the people are fully inside the picture with generous headroom above their heads, nobody is cut off. A woman pharmacist in a white coat attaches a small black Holter recorder to the belt of a grey-haired older man in an open blue shirt, standing in front of light oak pharmacy shelves. Sharp documentary photograph, true-to-life colours, natural daylight, no film grain, no haze, no bloom, no vignetting, no CGI look, no readable text, no logos.",
+  "references": [
+    "prototypes-v12-storia/immagini/servizio-holter-cardiaco.png"
+  ],
+  "credits": 2,
+  "aspect_ratio": "16:9",
+  "resolution": "2k",
+  "createdAt": "2026-10-07T14:53:57.574542Z",
+  "note": "Riquadro 16:9 ricavato dalla verticale 2k (stesso cast), per lo stage dei servizi sopra 768 px"
+}
